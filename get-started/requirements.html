@@ -986,7 +986,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-25 21:03:18 +0000">02/25/2022</time>
+    <time datetime="2022-02-28 17:53:19 +0000">02/28/2022</time>
     
   
 
@@ -1366,50 +1366,48 @@ MetalLB version 0.11.0 is not supported.
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Product</th>
+<th class="tableblock halign-left valign-top">Source</th>
+<th class="tableblock halign-left valign-top">Destination</th>
 <th class="tableblock halign-left valign-top">Port</th>
 <th class="tableblock halign-left valign-top">Protocol</th>
-<th class="tableblock halign-left valign-top">Direction</th>
 <th class="tableblock halign-left valign-top">Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Client PC</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Astra Control Center</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ingress</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UI / API access: Ensure this port is open both ways between the cluster hosting Astra Control Center and each managed cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UI / API access - Ensure this port is open both ways between the cluster hosting Astra Control Center and each managed cluster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metrics consumer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Astra Control Center worker node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9090</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metrics data communication - ensure each managed cluster can access this port on the cluster hosting Astra Control Center (two-way communication required)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Astra Control Center</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">9090</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hosted Cloud Insights service (<a href="https://cloudinsights.netapp.com" class="bare">https://cloudinsights.netapp.com</a>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Ingress (to cluster hosting Astra Control Center)</p>
-</li>
-<li>
-<p>Egress (random port from the node IP address of each worker node of each managed cluster)</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metrics data to metrics consumer: Ensure each managed cluster can access this port on the cluster hosting Astra Control Center</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Insights communication</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Astra Trident</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">34571</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Astra Control Center</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon S3 storage bucket provider (<a href="https://my-bucket.s3.us-west-2.amazonaws.com/" class="bare">https://my-bucket.s3.us-west-2.amazonaws.com/</a>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ingress</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Node pod communication</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon S3 storage communication</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Astra Trident</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">9220</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ingress</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metrics endpoint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Astra Control Center</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NetApp ActiveIQ (<a href="https://activeiq.solidfire.com" class="bare">https://activeiq.solidfire.com</a>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NetApp ActiveIQ communication</p></td>
 </tr>
 </tbody>
 </table>
