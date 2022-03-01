@@ -986,11 +986,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-28 17:53:19 +0000">02/28/2022</time>
+    <time datetime="2022-03-01 19:54:26 +0000">03/01/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/amgrissino">
+    <img  class="avatar avatar-small"
+          alt="amgrissino"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/36450105?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" href="https://github.com/netapp-mwallis">
     <img  class="avatar avatar-small"
           alt="netapp-mwallis"
@@ -1009,18 +1017,6 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can configure several optional settings to enhance your Astra Control Center experience. If the network where you’re running Astra Control Center requires a proxy for connecting to the Internet (to upload support bundles to NetApp Support Site or establish a connection to Cloud Insights), you should configure a proxy server in Astra Control Center. To monitor and gain insight into your complete infrastructure, create a connection to NetApp Cloud Insights. To collect Kubernetes events from systems monitored by Astra Control Center, add a Fluentd connection.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
-</td>
-<td class="content">
-After you enable the Cloud Insights connection, you can view throughput information on the <strong>Backends</strong> page as well as connect to Cloud Insights from here after selecting a storage backend. You can also find the information on the <strong>Dashboard</strong> in the Cluster section, and also connect to Cloud Insights from here.
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
@@ -1132,17 +1128,11 @@ Astra Control Center does not validate the details you enter for your proxy serv
 <div class="paragraph">
 <p>To monitor and gain insight into your complete infrastructure, connect NetApp Cloud Insights with your Astra Control Center instance. Cloud Insights is included in your Astra Control Center license.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Cloud Insights should be accessible from the network that Astra Control Center uses, or indirectly via a proxy server.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Cloud Insights should be accessible from the network that Astra Control Center uses, or indirectly via a proxy server.</p>
+</div>
+<div class="paragraph">
+<p>When Astra Control Center is connected to Cloud Insights, an Acquisition Unit pod gets created. This pod collects data from the storage backends that are managed by Astra Control Center and pushes it to Cloud Insights. This pod requires 8 GB RAM and 2 CPU cores.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1151,7 +1141,7 @@ Cloud Insights should be accessible from the network that Astra Control Center u
 <img src="/us-en/astra-control-center/images/note.svg" alt="Note">
 </td>
 <td class="content">
-When Astra Control Center is connected to Cloud Insights, an Acquisition Unit pod gets created. This pod collects data from the storage backends that are managed by Astra Control Center and pushes it to Cloud Insights. This pod requires 8 GB RAM and 2 CPU cores.
+After you enable the Cloud Insights connection, you can view throughput information on the <strong>Backends</strong> page as well as connect to Cloud Insights from here after selecting a storage backend. You can also find the information on the <strong>Dashboard</strong> in the Cluster section, and also connect to Cloud Insights from there.
 </td>
 </tr>
 </table>
@@ -1177,7 +1167,7 @@ When Astra Control Center is connected to Cloud Insights, an Acquisition Unit po
 <img src="/us-en/astra-control-center/images/tip.svg" alt="Tip">
 </td>
 <td class="content">
-If you are new to Cloud Insights, familiarize yourself with the features and capabilities <a href="https://docs.netapp.com/us-en/cloudinsights/index.html" target="_blank" rel="noopener">here</a>.
+If you are new to Cloud Insights, familiarize yourself with the features and capabilities. See <a href="https://docs.netapp.com/us-en/cloudinsights/index.html" target="_blank" rel="noopener">Cloud Insights documentation</a>.
 </td>
 </tr>
 </table>
@@ -1213,19 +1203,16 @@ If you are new to Cloud Insights, familiarize yourself with the features and cap
 <p>To get the <a href="https://docs.netapp.com/us-en/cloudinsights/API_Overview.html#api-access-tokens" target="_blank" rel="noopener">API token</a>, log in to your Cloud Insights tenant URL.</p>
 </li>
 <li>
-<p>In Cloud Insights, generate a <strong>Read only</strong> type API token.</p>
+<p>In Cloud Insights, generate both a <strong>Read/Write</strong> and a <strong>Read only</strong> API Access token by clicking <strong>Admin</strong> &gt; <strong>API Access</strong>.</p>
 <div class="paragraph">
 <p><span class="image"><img src="../media/use/cloud-insights-api.png" alt="Shows the Cloud Insights API token generation page."></span></p>
 </div>
 </li>
 <li>
-<p>Copy the <strong>Read only</strong> key. You will need to paste it into the Astra Control Center window for enabling the Cloud Insights connection.</p>
+<p>Copy the <strong>Read only</strong> key. You will need to paste it into the Astra Control Center window for enabling the Cloud Insights connection. For the Read API Access Token key permissions, select: Assets, Alerts, Acquisition Unit, and Data Collection.</p>
 </li>
 <li>
-<p>In Cloud Insights, generate a <strong>Read/Write</strong> type API token.</p>
-</li>
-<li>
-<p>Copy the <strong>Read/Write</strong> key. You will need to paste it into the Astra Control Center <strong>Connect Cloud Insights</strong> window.</p>
+<p>Copy the <strong>Read/Write</strong> key. You will need to paste it into the Astra Control Center <strong>Connect Cloud Insights</strong> window. For the Read/Write API Access Token key permissions, select: Assets, Data Ingestion, Log Ingestion, Acquisition Unit, and Data Collection.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
