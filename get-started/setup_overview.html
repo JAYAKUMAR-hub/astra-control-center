@@ -986,7 +986,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-01 19:54:26 +0000">03/01/2022</time>
+    <time datetime="2022-03-01 22:59:03 +0000">03/01/2022</time>
     
   
 
@@ -1139,6 +1139,30 @@ If you have an evaluation license, be sure you store your account ID to avoid da
 </td>
 <td class="content">
 We recommend that Astra Control Center manage the cluster it is deployed on first before you add other clusters to Astra Control Center to manage. Having the initial cluster under management is necessary to send Kubemetrics data and cluster-associated data for metrics and troubleshooting. You can use the <strong>Add Cluster</strong> feature to manage a cluster with Astra Control Center.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When Astra Control manages a cluster, it keeps track of the cluster&#8217;s default StorageClass. If you change the StorageClass using <code>kubectl</code> commands, Astra Control reverts the change. To change the default StorageClass in a cluster managed by Astra Control, use one of the following methods:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use the Astra Control API <code>PUT /managedClusters</code> endpoint, and assign a different default StorageClass with the <code>DefaultStorageClass</code> parameter</p>
+</li>
+<li>
+<p>Remove the cluster from Astra Control management and re-add it with a different default StorageClass selected</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
