@@ -973,7 +973,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-01 17:11:42 +0000">02/01/2022</time>
+    <time datetime="2022-03-17 15:23:57 +0000">03/17/2022</time>
     
   
 
@@ -1136,7 +1136,7 @@ Do not execute the following command during the entirety of the installation pro
 <p>Download the Astra Control Center bundle (<code>astra-control-center-[version].tar.gz</code>) from the <a href="https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab" target="_blank" rel="noopener">NetApp Support Site</a>.</p>
 </li>
 <li>
-<p>Download the zip of Astra Control Center certificates and keys from <a href="https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab" target="_blank" rel="noopener">NetApp Support Site</a>.</p>
+<p>Download the zip of Astra Control Center certificates and keys from the <a href="https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab" target="_blank" rel="noopener">NetApp Support Site</a>.</p>
 </li>
 <li>
 <p>(Optional) Use the following command to verify the signature of the bundle:</p>
@@ -1512,13 +1512,13 @@ If you are using a registry that does not require authorization, you must delete
 <p>Change the <code>email</code> string to the default initial administrator address. Copy this email address for use in a <a href="#log-in-to-the-astra-control-center-ui">later step</a>.</p>
 </li>
 <li>
-<p>Change <code>enrolled</code> for autoSupport to <code>false</code> for sites without internet connectivity or retain <code>true</code> for connected sites.</p>
+<p>Change <code>enrolled</code> for AutoSupport to <code>false</code> for sites without internet connectivity or retain <code>true</code> for connected sites.</p>
 </li>
 <li>
 <p>(Optional) Add a first name <code>firstName</code> and last name <code>lastName</code> of the user associated with the account. You can perform this step now or later within the UI.</p>
 </li>
 <li>
-<p>(Optional) Change the <code>storageClass</code> value to another Trident storageClass resource if required by your installation.</p>
+<p>(Optional) Change the <code>storageClass</code> value to another Astra Trident StorageClass resource if required by your installation.</p>
 </li>
 <li>
 <p>(For installations using Astra Data Store preview) See this known issue for <a href="../release-notes/known-issues-ads.html#astra-data-store-cannot-be-used-as-a-storage-class-for-astra-control-center-due-to-mongodb-pod-liveness-probe-failure">additional required changes</a> to the YAML.</p>
@@ -1624,7 +1624,7 @@ If you prefer to use OpenShift, you can use comparable oc commands for verificat
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>NAME                                         READY   STATUS    RESTARTS   AGE
+<pre>NAME                                       READY   STATUS    RESTARTS   AGE
 acc-helm-repo-5f75c5f564-bzqmt             1/1     Running   0          11m
 activity-6b8f7cccb9-mlrn4                  1/1     Running   0          9m2s
 api-token-authentication-6hznt             1/1     Running   0          8m50s
@@ -1707,7 +1707,7 @@ vault-controller-86c94fbf4f-krttq          1/1     Running   0          9m24s</p
 </div>
 </li>
 <li>
-<p>When all the pods are running, verify installation success by retrieving the AstraControlCenter instance installed by the Astra Control Center Operator.</p>
+<p>When all the pods are running, verify installation success by retrieving the <code>AstraControlCenter</code> instance installed by the Astra Control Center Operator.</p>
 <div class="listingblock">
 <div class="content">
 <pre>kubectl get acc -o yaml -n [netapp-acc or custom namespace]</pre>

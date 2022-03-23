@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Get started with Astra Control Center by verifying support for your Kubernetes clusters, apps, and web browser.">
-  <meta name="keywords" content=" what are astra kubernetes requirements, astra control requirements, astra supported versions, apps, supported apps, mariadb, mysql, postgres, kubernetes version, ubuntu, image type, networking"><!-- Icons -->
+  <meta name="keywords" content=" what are astra kubernetes requirements, astra control requirements, astra supported versions, apps, supported apps, mariadb, mysql, postgres, kubernetes version, ubuntu, image type, networking, environment, operational, operational environment, hosting, host, cluster, clusters"><!-- Icons -->
   <link rel="icon" href="/us-en/astra-control-center/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -973,7 +973,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-22 18:07:17 +0000">03/22/2022</time>
+    <time datetime="2022-03-23 21:09:10 +0000">03/23/2022</time>
     
   
 
@@ -986,14 +986,6 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" href="https://github.com/netapp-dbagwell">
-    <img  class="avatar avatar-small"
-          alt="netapp-dbagwell"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/53352450?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 
@@ -1002,15 +994,15 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Get started by verifying support for your Kubernetes clusters, apps, licenses, and web browser.</p>
+<p>Get started by verifying the readiness of your operational environment, application clusters, applications, licenses, and web browser.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="kubernetes-cluster-general-requirements">Kubernetes cluster general requirements</h2>
+<h2 id="operational-environment-requirements">Operational environment requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Astra Control Center requires one of the following types of host clusters:</p>
+<p>Astra Control Center requires one of the following types of operational environments:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1026,25 +1018,40 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>The cluster must meet the following general requirements so you can discover and manage it from Astra Control Center.</p>
+<p>Ensure that the operating environment you choose to host Astra Control Center meets the basic resource requirements outlined in the environment&#8217;s official documentation. Astra Control Center requires the following resources in addition to the environment&#8217;s resource requirements:</p>
 </div>
-<div class="ulist">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Component</th>
+<th class="tableblock halign-left valign-top">Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Backend ONTAP storage capacity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">At least 300GB available</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Worker nodes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">At least 3 worker nodes total, with 4 CPU cores and 12GB RAM each</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Load balancer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service type "LoadBalancer" available for ingress traffic to be sent to services in the operational environment cluster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FQDN resolution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A method for pointing the FQDN of Astra Control Center to the load balanced IP address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Astra Trident</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
-<li>
-<p>At least 300GB available in backend ONTAP storage capacity</p>
-</li>
-<li>
-<p>3 controller nodes with 4 CPU cores, 16GB RAM, and 120GB of available storage each</p>
-</li>
-<li>
-<p>3 worker nodes with at least 12 CPU cores, 32GB RAM, and 50GB of available storage each</p>
-</li>
-<li>
-<p>Service type "LoadBalancer" available for ingress traffic to be sent to services in the OpenShift cluster</p>
-</li>
-<li>
-<p>A method for pointing the FQDN of Astra Control Center to the load balanced IP address</p>
-</li>
 <li>
 <p>Astra Trident 21.04 or newer installed and configured if NetApp ONTAP version 9.5 or newer will be used as a storage backend</p>
 </li>
@@ -1052,7 +1059,10 @@
 <p>Astra Trident 21.10.1 or newer installed and configured if Astra Data Store preview will be used as a storage backend</p>
 </li>
 </ul>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1060,7 +1070,7 @@
 <img src="/us-en/astra-control-center/images/note.svg" alt="Note">
 </td>
 <td class="content">
-These requirements assume that Astra Control Center is the only application running on the OpenShift cluster. If the cluster is running additional applications, adjust these minimum requirements accordingly.
+These requirements assume that Astra Control Center is the only application running in the operational environment. If the environment is running additional applications, adjust these minimum requirements accordingly.
 </td>
 </tr>
 </table>
@@ -1091,8 +1101,49 @@ These requirements assume that Astra Control Center is the only application runn
 </li>
 </ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
 <div class="paragraph">
-<p>If you are planning to manage the Kubernetes cluster from Astra Control Center as well as use the cluster to host the Astra Control Center installation, the cluster has the following additional requirements:</p>
+<p>During app cloning in OpenShift environments, Astra Control Center needs to allow OpenShift to mount volumes and change the ownership of files. Because of this, you need to configure an ONTAP volume export policy to allow these operations. You can do so with the following commands:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>export-policy rule modify -vserver &lt;storage virtual machine name&gt; -policyname &lt;policy name&gt; -ruleindex 1 -superuser sys</code></p>
+</li>
+<li>
+<p><code>export-policy rule modify -vserver &lt;storage virtual machine name&gt; -policyname &lt;policy name&gt; -ruleindex 1 -anon 65534</code></p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If you plan to add a second OpenShift operational environment as a managed compute resource, you need to ensure that the Astra Trident Volume Snapshot feature is enabled. To enable and test volume snapshots with Astra Trident, <a href="https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html" target="_blank" rel="noopener">see the official Astra Trident instructions</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="application-cluster-requirements">Application cluster requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control Center has the following requirements for clusters that you plan to manage from Astra Control Center. These requirements also apply if the cluster you plan to manage is the operational environment cluster that hosts Astra Control Center.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1108,9 +1159,6 @@ These requirements assume that Astra Control Center is the only application runn
 <li>
 <p>At least one storage class is configured to use Astra Trident</p>
 </li>
-<li>
-<p>A method for pointing the FQDN of Astra Control Center to the external IP address of the Astra Control Center service</p>
-</li>
 </ul>
 </div>
 <div class="admonitionblock note">
@@ -1120,12 +1168,7 @@ These requirements assume that Astra Control Center is the only application runn
 <img src="/us-en/astra-control-center/images/note.svg" alt="Note">
 </td>
 <td class="content">
-<div class="paragraph">
-<p>During app cloning, Astra Control Center needs to allow OpenShift to mount volumes and change the ownership of files if necessary. Because of this, you need to configure an ONTAP volume export policy to allow volume operations to complete successfully. You can do so with the following commands:</p>
-</div>
-<div class="paragraph">
-<p><code>export-policy rule modify -vserver &lt;storage virtual machine name&gt; -policyname &lt;policy name&gt;  -ruleindex 1 -superuser sysm --anon 65534</code></p>
-</div>
+Your application cluster should have a <code>kubeconfig.yaml</code> file that defines only one <em>context</em> element. Visit the Kubernetes documentation for <a href="https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/" target="_blank" rel="noopener">information about creating kubeconfig files</a>.
 </td>
 </tr>
 </table>
@@ -1137,7 +1180,7 @@ These requirements assume that Astra Control Center is the only application runn
 <img src="/us-en/astra-control-center/images/note.svg" alt="Note">
 </td>
 <td class="content">
-If you plan to add a second OpenShift cluster as a managed compute resource, you need to ensure that the Astra Trident Volume Snapshot feature is enabled. See the official Astra Trident <a href="https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html" target="_blank" rel="noopener">instructions</a> to enable and test Volume Snapshots with Astra Trident.
+When managing application clusters in a Rancher environment, modify the application cluster&#8217;s default context in the <code>kubeconfig</code> file provided by Rancher to use a control plane context instead of the Rancher API server context. This reduces load on the Rancher API server and improves performance.
 </td>
 </tr>
 </table>
@@ -1145,24 +1188,24 @@ If you plan to add a second OpenShift cluster as a managed compute resource, you
 </div>
 </div>
 <div class="sect1">
-<h2 id="app-management-requirements">App management requirements</h2>
+<h2 id="application-management-requirements">Application management requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Astra Control has the following app management requirements:</p>
+<p>Astra Control has the following application management requirements:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Licensing</strong>: To manage apps using Astra Control Center, you need an Astra Control Center license.</p>
+<p><strong>Licensing</strong>: To manage applications using Astra Control Center, you need an Astra Control Center license.</p>
 </li>
 <li>
 <p><strong>Namespaces</strong>: Astra Control requires that an app not span more than a single namespace, but a namespace can contain more than one app.</p>
 </li>
 <li>
-<p><strong>StorageClass</strong>: If you install an app with a StorageClass explicitly set and you need to clone the app, the target cluster for the clone operation must have the originally specified StorageClass. Cloning an application with an explicitly set StorageClass to a cluster that does not have the same StorageClass will fail.</p>
+<p><strong>StorageClass</strong>: If you install an application with a StorageClass explicitly set and you need to clone the app, the target cluster for the clone operation must have the originally specified StorageClass. Cloning an application with an explicitly set StorageClass to a cluster that does not have the same StorageClass will fail.</p>
 </li>
 <li>
-<p><strong>Kubernetes resources</strong>: Apps that use Kubernetes resources not collected by Astra Control might not have full app data management capabilities. Astra Control collects the following Kubernetes resources:</p>
+<p><strong>Kubernetes resources</strong>: Applications that use Kubernetes resources not collected by Astra Control might not have full app data management capabilities. Astra Control collects the following Kubernetes resources:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1234,7 +1277,7 @@ If you plan to add a second OpenShift cluster as a managed compute resource, you
 </ul>
 </div>
 <div class="sect2">
-<h3 id="supported-app-installation-methods">Supported app installation methods</h3>
+<h3 id="supported-application-installation-methods">Supported application installation methods</h3>
 <div class="paragraph">
 <p>Astra Control supports the following application installation methods:</p>
 </div>
@@ -1249,7 +1292,7 @@ If you plan to add a second OpenShift cluster as a managed compute resource, you
 </div>
 </li>
 <li>
-<p><strong>Helm 3</strong>: If you use Helm to install apps, Astra Control requires Helm version 3. Managing and cloning apps installed with Helm 3 (or upgraded from Helm 2 to Helm 3) are fully supported. Managing apps installed with Helm 2 is not supported.</p>
+<p><strong>Helm 3</strong>: If you use Helm to install apps, Astra Control requires Helm version 3. Managing and cloning apps installed with Helm 3 (or upgraded from Helm 2 to Helm 3) is fully supported. Managing apps installed with Helm 2 is not supported.</p>
 </li>
 <li>
 <p><strong>Operator-deployed apps</strong>: Astra Control supports apps installed with namespace-scoped operators. The following are some apps that have been validated for this installation model:</p>
@@ -1322,25 +1365,13 @@ An operator and the app it installs must use the same namespace; you might need 
 <div class="paragraph">
 <p>Astra Control Center uses a service of the type "LoadBalancer" (svc/traefik in the Astra Control Center namespace), and requires that it be assigned an accessible external IP address. If load balancers are permitted in your environment and you don&#8217;t already have one configured, you can use <a href="https://docs.netapp.com/us-en/netapp-solutions/containers/rh-os-n_LB_MetalLB.html#installing-the-metallb-load-balancer" target="_blank" rel="noopener">MetalLB</a> to automatically assign an external IP address to the service. In the internal DNS server configuration, you should point the chosen DNS name for Astra Control Center to the load-balanced IP address.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
-</td>
-<td class="content">
-MetalLB version 0.11.0 is not supported.
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="networking-requirements">Networking requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The cluster that hosts Astra Control Center communicates using the following TCP ports. You should ensure that these ports are allowed through any firewalls, and configure firewalls to allow any HTTPS egress traffic originating from the Astra network. Some ports require connectivity both ways between the cluster hosting Astra Control Center and each managed cluster (noted where applicable).</p>
+<p>The operational environment that hosts Astra Control Center communicates using the following TCP ports. You should ensure that these ports are allowed through any firewalls, and configure firewalls to allow any HTTPS egress traffic originating from the Astra network. Some ports require connectivity both ways between the environment hosting Astra Control Center and each managed cluster (noted where applicable).</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>

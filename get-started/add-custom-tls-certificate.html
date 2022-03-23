@@ -973,7 +973,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-12-15 17:16:39 +0000">12/15/2021</time>
+    <time datetime="2022-01-25 16:44:47 +0000">01/25/2022</time>
     
   
 
@@ -999,6 +999,8 @@
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
 <p>You can remove the existing self-signed TLS certificate and replace it with a TLS certificate signed by a Certificate Authority (CA).</p>
 </div>
@@ -1016,8 +1018,15 @@
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="remove-the-self-signed-certificate">Remove the self-signed certificate</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Remove the existing self-signed TLS certificate.</p>
+</div>
 <div class="olist arabic">
-<div class="title">Remove the self-signed certificate</div>
 <ol class="arabic">
 <li>
 <p>Using SSH, log in to the Kubernetes cluster that hosts Astra Control Center as an administrative user.</p>
@@ -1041,8 +1050,15 @@ kubectl delete secret secure-testing-cert -n &lt;ACC-deployment-namespace&gt;</p
 </li>
 </ol>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="add-a-new-certificate">Add a new certificate</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Add a new TLS certificate that is signed by a CA.</p>
+</div>
 <div class="olist arabic">
-<div class="title">Add a new certificate</div>
 <ol class="arabic">
 <li>
 <p>Use the following command to create the new TLS secret with the private key and certificate files from the CA, replacing the arguments in brackets &lt;&gt; with the appropriate information:</p>
@@ -1179,6 +1195,8 @@ Events:                    &lt;none&gt;</pre>
 <p>Export the certificate and import the result into the certificate manager in your web browser.</p>
 </li>
 </ol>
+</div>
+</div>
 </div>
 
     </article>
