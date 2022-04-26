@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Add storage for your on-premises Kubernetes applications. Astra Control discovers and uses the already-deployed resources, including Trident, ONTAP, and asso...">
-  <meta name="keywords" content=" how to use astra control, what is astra storage, how to set up astra storage backend, ontap storage in astra, kubernetes,"><!-- Icons -->
+  <meta name="keywords" content=" how to use astra control, what is astra storage, how to set up astra storage backend, ontap storage in astra, backend storage in astra"><!-- Icons -->
   <link rel="icon" href="/us-en/astra-control-center/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -296,9 +296,9 @@
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/astra-control-center/use/manage-backend.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-center/use/manage-backend.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/astra-control-center/use/manage-backend.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-center/use/manage-backend.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -379,9 +379,30 @@
 
 
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/astra-control-center/pdfs/sidebar/Known_issues.pdf" 
+            
+          >
+            <img src="/us-en/astra-control-center/images/pdf.png" width="16" height="16"/>
+            Known issues
+          </a>
+          
 
 
 
+          
+        </li>
+      </ul>
+    
+
+  
 
 
 
@@ -411,6 +432,10 @@
             Concepts
           </a>
           
+
+
+
+
 
 
 
@@ -471,6 +496,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -495,6 +522,8 @@
             Set up Astra Control Center
           </a>
           
+
+
 
 
 
@@ -682,6 +711,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -701,8 +732,6 @@
 
 </ul>
   
-
-
 
 
 
@@ -859,13 +888,12 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/release-notes/whats-new.html">
         What's new in this release of Astra Control Center
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/release-notes/resolved-issues.html">
-        Resolved issues
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/release-notes/known-issues-ads.html">
+      </a></li><li class="subfolders "><a href="/us-en/astra-control-center/release-notes/known-issues.html">
+        <div class="na-navbar-padding"> Known issues</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/release-notes/known-issues-ads.html">
         Known issues with Astra Data Store preview and this Astra Control Center release
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/release-notes/known-issues.html">
-        Known issues
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/release-notes/known-limitations.html">
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/release-notes/known-limitations.html">
         Known limitations
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Concepts</div>
@@ -876,10 +904,14 @@
         Architecture and components
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/data-protection.html">
         Data protection
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/licensing.html">
+        Licensing
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/validated-vs-standard.html">
         Validated vs standard apps
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/choose-class-and-size.html">
         Storage classes and PV size
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/user-roles-namespaces.html">
+        User roles and namespaces
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Get started</div>
       </a>
@@ -894,6 +926,8 @@
         Install Astra Control Center
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/acc_operatorhub_install.html">
         Install Astra Control Center using OpenShift OperatorHub
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/install_acc-cvo.html">
+        Install Astra Control Center with a Cloud Volumes ONTAP storage backend
       </a></li></ul></li><li class="subfolders "><a href="/us-en/astra-control-center/get-started/setup_overview.html">
         <div class="na-navbar-padding"> Set up Astra Control Center</div>
       </a>
@@ -901,6 +935,8 @@
         Prerequisites for adding a cluster
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/add-custom-tls-certificate.html">
         Add a custom TLS certificate
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/acc-create-podsecuritypolicy.html">
+        Create a custom pod security policy
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/faq.html">
         FAQ
       </a></li></ul></li><li class="subfolders "><a href="#">
@@ -943,6 +979,8 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-users.html">
         Manage users
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-roles.html">
+        Manage roles
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-notifications.html">
         Manage notifications
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-credentials.html">
@@ -957,8 +995,6 @@
         Manage the storage backend
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/monitor-protect.html">
         Monitor and protect infrastructure
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/update-licenses.html">
-        Update an existing license
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/unmanage.html">
         Unmanage apps and clusters
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/upgrade-acc.html">
@@ -1043,7 +1079,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-12-14 22:27:53 +0000">12/14/2021</time>
+    <time datetime="2022-04-18 15:07:37 +0000">04/18/2022</time>
     
   
 
@@ -1056,19 +1092,19 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-dbagwell">
-    <img  class="avatar avatar-small"
-          alt="netapp-dbagwell"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/53352450?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-mwallis">
     <img  class="avatar avatar-small"
           alt="netapp-mwallis"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/53353653?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-dbagwell">
+    <img  class="avatar avatar-small"
+          alt="netapp-dbagwell"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/53352450?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1098,6 +1134,15 @@
 </li>
 <li>
 <p><a href="#unmanage-a-storage-backend">Unmanage a storage backend</a></p>
+</li>
+<li>
+<p><a href="#update-a-storage-backend-license">Update a storage backend license</a></p>
+</li>
+<li>
+<p><a href="#add-nodes-to-a-storage-backend-cluster">Add nodes to a storage backend cluster</a></p>
+</li>
+<li>
+<p><a href="#remove-a-storage-backend">Remove a storage backend</a></p>
 </li>
 </ul>
 </div>
@@ -1186,19 +1231,233 @@ If you connected to NetApp Cloud Insights, excerpts of data from Cloud Insights 
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>From left navigation, select <strong>Backends</strong>.</p>
+<p>From the left navigation, select <strong>Backends</strong>.</p>
 </li>
 <li>
 <p>Select the storage backend.</p>
 </li>
 <li>
-<p>From the Actions menu, select <strong>Unmanage</strong>.</p>
+<p>From the Options menu in the <strong>Actions</strong> column, select <strong>Unmanage</strong>.</p>
 </li>
 <li>
-<p>Type "unmanage" to confirm the removal.</p>
+<p>Type "unmanage" to confirm the action.</p>
+</li>
+<li>
+<p>Select <strong>Yes, unmanage storage backend</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="remove-a-storage-backend">Remove a storage backend</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can remove a storage backend that is no longer in use. You might want to do this to keep your configuration simple and up-to-date.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/tip.svg" alt="Tip">
+</td>
+<td class="content">
+If you are removing an Astra Data Store backend, it must not have been created by vCenter.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">What you&#8217;ll need</div>
+<ul>
+<li>
+<p>Ensure that the storage backend is unmanaged.</p>
+</li>
+<li>
+<p>Ensure that the storage backend does not have any volumes associated with the Astra Data Store cluster.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>From left navigation, select <strong>Backends</strong>.</p>
+</li>
+<li>
+<p>If the backend is managed, unmanage it.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Select <strong>Managed</strong>.</p>
+</li>
+<li>
+<p>Select the storage backend.</p>
+</li>
+<li>
+<p>From the  <strong>Actions</strong> option, select <strong>Unmanage</strong>.</p>
+</li>
+<li>
+<p>Type "unmanage" to confirm the action.</p>
+</li>
+<li>
+<p>Select <strong>Yes, unmanage storage backend</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Select <strong>Discovered</strong>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Select the storage backend.</p>
+</li>
+<li>
+<p>From the  <strong>Actions</strong> option, select <strong>Remove</strong>.</p>
+</li>
+<li>
+<p>Type "remove" to confirm the action.</p>
 </li>
 <li>
 <p>Select <strong>Yes, remove storage backend</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="update-a-storage-backend-license">Update a storage backend license</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can update the license for an Astra Data Store storage backend to support a larger deployment or enhanced features.</p>
+</div>
+<div class="ulist">
+<div class="title">What you&#8217;ll need</div>
+<ul>
+<li>
+<p>A deployed and managed Astra Data Store storage backend</p>
+</li>
+<li>
+<p>An Astra Data Store license file (contact your NetApp sales representative to purchase an Astra Data Store license)</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>From the left navigation, select <strong>Backends</strong>.</p>
+</li>
+<li>
+<p>Select the name of a storage backend.</p>
+</li>
+<li>
+<p>Under <strong>Basic Information</strong>, you can see the type of license installed, if any.</p>
+<div class="paragraph">
+<p>If you hover over the license information, a popup appears with more information, such as expiration and entitlement information.</p>
+</div>
+</li>
+<li>
+<p>Under <strong>License</strong>, select the edit icon next to the license name.</p>
+</li>
+<li>
+<p>In the <strong>Update license</strong> page, select <strong>Add license</strong>.</p>
+</li>
+<li>
+<p>Select a license file that you have obtained from NetApp.</p>
+</li>
+<li>
+<p>Select <strong>Add</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Update</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="add-nodes-to-a-storage-backend-cluster">Add nodes to a storage backend cluster</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can add nodes to an Astra Data Store cluster, up to the number of nodes supported by the type of license installed for Astra Data Store.</p>
+</div>
+<div class="ulist">
+<div class="title">What you&#8217;ll need</div>
+<ul>
+<li>
+<p>A deployed and licensed Astra Data Store storage backend</p>
+</li>
+<li>
+<p>You have added the Astra Data Store software package in Astra Control Center</p>
+</li>
+<li>
+<p>One or more new nodes to add to the cluster</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>From the left navigation, select <strong>Backends</strong>.</p>
+</li>
+<li>
+<p>Select the name of a storage backend.</p>
+</li>
+<li>
+<p>Under Basic Information, you can see the number of nodes in this storage backend cluster.</p>
+</li>
+<li>
+<p>Under <strong>Nodes</strong>, select the edit icon next to the number of nodes.</p>
+</li>
+<li>
+<p>In the <strong>Add nodes</strong> page, enter information about the new node or nodes:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Assign a node label for each node.</p>
+</li>
+<li>
+<p>Do one of the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you want Astra Data Store to always use the maximum available number of nodes according to your license, enable the <strong>Always use up to maximum number of nodes allowed</strong> check box.</p>
+</li>
+<li>
+<p>If you don&#8217;t want Astra Data Store to always use the maximum available number of nodes, select the desired number of total nodes to use.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If you deployed Astra Data Store with Protection Domains enabled, assign the new node or nodes to Protection Domains.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Select <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Enter IP address and network information for each new node. Enter a single IP address for a single new node, or an IP address pool for multiple new nodes.</p>
+<div class="paragraph">
+<p>If Astra Data Store can use the IP addresses configured during deployment, you don&#8217;t need to enter any IP address information.</p>
+</div>
+</li>
+<li>
+<p>Select <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Review the configuration for the new node or nodes.</p>
+</li>
+<li>
+<p>Select <strong>Add nodes</strong>.</p>
 </li>
 </ol>
 </div>
