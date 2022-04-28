@@ -1079,7 +1079,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-19 16:19:52 +0000">04/19/2022</time>
+    <time datetime="2022-04-28 17:59:35 +0000">04/28/2022</time>
     
   
 
@@ -1137,6 +1137,9 @@
 </li>
 <li>
 <p>During an app backup or app restore, you can optionally specify a bucket ID. An app clone operation, however, always uses the default bucket that has been defined. There is no option to change buckets for a clone. If you want control over which bucket is used, you can either <a href="../use/manage-buckets.html#edit-a-bucket">change the bucket default</a> or do a <a href="../use/protect-apps.html#create-a-backup">backup</a> followed by a <a href="../use/restore-apps.html">restore</a> separately.</p>
+</li>
+<li>
+<p>Any member user with namespace constraints by namespace name/ID or by namespace labels can clone or restore an app to a new namespace on the same cluster or to any other cluster in their organization’s account. However, the same user cannot access the cloned or restored app in the new namespace. After a new namespace is created by a clone or restore operation, the account admin/owner can edit the member user account and update role constraints for the affected user to grant access to the new namespace.</p>
 </li>
 </ul>
 </div>
