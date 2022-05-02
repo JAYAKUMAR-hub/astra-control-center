@@ -1079,7 +1079,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-06 18:33:31 +0000">04/06/2022</time>
+    <time datetime="2022-04-29 17:19:54 +0000">04/29/2022</time>
     
   
 
@@ -1130,13 +1130,19 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Clusters running OpenShift 4.6, 4.7, or 4.8, which has Astra Trident StorageClasses backed by Astra Data Store or ONTAP 9.5 or later</p>
+<p>Clusters running OpenShift 4.6.8, 4.7, 4.8, or 4.9</p>
 </li>
 <li>
-<p>Clusters running Rancher 2.5</p>
+<p>Clusters running Rancher 2.5.8, 2.5.9, or 2.6 with RKE1</p>
 </li>
 <li>
-<p>Clusters running Kubernetes 1.19 to 1.21 (including 1.21.x)</p>
+<p>Clusters running Kubernetes 1.20 to 1.23</p>
+</li>
+<li>
+<p>Clusters running VMware Tanzu Kubernetes Grid 1.4</p>
+</li>
+<li>
+<p>Clusters running VMware Tanzu Kubernetes Grid Integrated Edition 1.12.2</p>
 <div class="paragraph">
 <p>Make sure your clusters have one or more worker nodes with at least 1GB RAM available for running telemetry services.</p>
 </div>
@@ -1155,6 +1161,9 @@ If you plan to add a second OpenShift 4.6, 4.7, or 4.8 cluster as a managed comp
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>Astra Trident StorageClasses configured with a <a href="requirements.html#supported-storage-backends">supported storage backend</a> (required for any type of cluster)</p>
 </li>
 <li>
 <p>The superuser and user ID set on the backing ONTAP system to back up and restore apps with Astra Control Center. Run the following command in the ONTAP command line:<br>
