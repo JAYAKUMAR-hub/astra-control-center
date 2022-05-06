@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Adding object store bucket providers is essential if you want to back up your applications and persistent storage or if you want to clone applications across...">
-  <meta name="keywords" content=" how to set up object storage in astra, how to set up astra buckets, s3, astra, setting up astra control, how to set up astra control center, kubernetes"><!-- Icons -->
+  <meta name="keywords" content=" how to set up object storage in astra, how to set up astra buckets, s3, astra, setting up astra control, astra control center, kubernetes"><!-- Icons -->
   <link rel="icon" href="/us-en/astra-control-center/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -1081,7 +1081,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-19 16:24:56 +0000">04/19/2022</time>
+    <time datetime="2022-05-06 18:39:34 +0000">05/06/2022</time>
     
   
 
@@ -1185,6 +1185,9 @@ Although Astra Control Center supports Amazon S3 as a Generic S3 bucket provider
 <p><a href="#edit-a-bucket">Edit a bucket</a></p>
 </li>
 <li>
+<p><a href="#rotate-or-remove-bucket-credentials">Rotate or remove bucket credentials</a></p>
+</li>
+<li>
 <p><a href="#remove-a-bucket">Remove a bucket</a></p>
 </li>
 </ul>
@@ -1197,29 +1200,6 @@ Although Astra Control Center supports Amazon S3 as a Generic S3 bucket provider
 </td>
 <td class="content">
 S3 buckets in Astra Control Center do not report available capacity. Before backing up or cloning apps managed by Astra Control Center, check bucket information in the ONTAP or StorageGRID management system.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="remove-credentials">Remove credentials</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Remove S3 credentials from an account at any time using the Astra Control API.</p>
-</div>
-<div class="paragraph">
-<p>For details, see <a href="https://docs.netapp.com/us-en/astra-automation/index.html" target="_blank" rel="noopener">Use the Astra Control API</a>.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/astra-control-center/images/tip.svg" alt="Tip">
-</td>
-<td class="content">
-The first set of credentials that you add to Astra Control is always in use because Astra Control uses the credentials to authenticate the backup bucket. It’s best not to remove these credentials.
 </td>
 </tr>
 </table>
@@ -1248,7 +1228,7 @@ When you add a bucket, select the correct bucket provider and provide the right 
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>From left navigation, select <strong>Buckets</strong>.</p>
+<p>From the left navigation, select <strong>Buckets</strong>.</p>
 </li>
 <li>
 <p>From the Options menu in the <strong>Actions</strong> column, select <strong>Edit</strong>.</p>
@@ -1272,6 +1252,70 @@ You can&#8217;t modify the bucket type.
 <p>Select <strong>Update</strong>.</p>
 </li>
 </ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rotate-or-remove-bucket-credentials">Rotate or remove bucket credentials</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control uses bucket credentials to gain access and provide secret keys for an S3 bucket so that Astra Control Center can communicate with the bucket.</p>
+</div>
+<div class="sect2">
+<h3 id="rotate-bucket-credentials">Rotate bucket credentials</h3>
+<div class="paragraph">
+<p>If you rotate credentials, rotate them during a maintenance window when no backups are in progress (scheduled or on-demand).</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps to edit and rotate credentials</div>
+<ol class="arabic">
+<li>
+<p>From the left navigation, select <strong>Buckets</strong>.</p>
+</li>
+<li>
+<p>From the Options menu in the <strong>Actions</strong> column, select <strong>Edit</strong>.</p>
+</li>
+<li>
+<p>Create the new credential.</p>
+</li>
+<li>
+<p>Select <strong>Update</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="remove-bucket-credentials">Remove bucket credentials</h3>
+<div class="paragraph">
+<p>You should only remove bucket credentials if new credentials have been applied to a bucket, or if the bucket is no longer actively used.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/tip.svg" alt="Tip">
+</td>
+<td class="content">
+The first set of credentials that you add to Astra Control is always in use because Astra Control uses the credentials to authenticate the backup bucket. Do not remove these credentials if the bucket is in active use as this will lead to backup failures and backup unavailability.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If you do remove active bucket credentials, see <a href="https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra/Deleting_active_S3_bucket_credentials_leads_to_spurious_500_errors_reported_in_the_UI">troubleshooting bucket credential removal</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For instructions on how to remove S3 credentials using the Astra Control API, see the <a href="https://docs.netapp.com/us-en/astra-automation/" target="_blank" rel="noopener">Astra Automation and API information</a>.</p>
+</div>
 </div>
 </div>
 </div>
