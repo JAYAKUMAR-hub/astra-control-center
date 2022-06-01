@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="After you install Astra Control Center, log in to the UI, and change your password, you'll want to set up a license, add clusters, manage storage, and add bu...">
-  <meta name="keywords" content=" set up astra control, setup astra control, setting up Astra Control Center, astra control license, add cluster, import storage, add bucket"><!-- Icons -->
+  <meta name="keywords" content=" set up astra control, astra control license, add cluster, add storage backend, import storage, add bucket"><!-- Icons -->
   <link rel="icon" href="/us-en/astra-control-center/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -724,6 +724,10 @@
 
 
 
+
+
+
+
           
         </li>
       </ul>
@@ -894,14 +898,14 @@
         <div class="na-navbar-padding"> Known issues</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/release-notes/known-issues-ads.html">
-        Known issues with Astra Data Store preview and this Astra Control Center release
+        Known issues with Astra Data Store and this Astra Control Center release
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/release-notes/known-limitations.html">
         Known limitations
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Concepts</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/intro.html">
-        Intro to Astra Control
+        Learn about Astra Control
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/architecture.html">
         Architecture and components
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/data-protection.html">
@@ -991,6 +995,10 @@
         Monitor account activity
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/update-licenses.html">
         Update an existing license
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-connections.html">
+        Manage repository connections
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-packages-acc.html">
+        Manage software packages
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-buckets.html">
         Manage buckets
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-backend.html">
@@ -1081,7 +1089,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-22 22:25:56 +0000">04/22/2022</time>
+    <time datetime="2022-05-31 19:57:49 +0000">05/31/2022</time>
     
   
 
@@ -1223,7 +1231,7 @@ If you have an evaluation license, be sure you store your account ID to avoid da
 <h2 id="add-cluster">Add cluster</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To begin managing your apps, add a Kubernetes cluster and manage it as a compute resource. You have to add a cluster for Astra Control Center to discover your Kubernetes applications. For Astra Data Store preview, you want to add the Kubernetes app cluster that contains applications that are using volumes provisioned by Astra Data Store preview.</p>
+<p>To begin managing your apps, add a Kubernetes cluster and manage it as a compute resource. You have to add a cluster for Astra Control Center to discover your Kubernetes applications. For Astra Data Store, you want to add the Kubernetes app cluster that contains applications that are using volumes provisioned by Astra Data Store.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1261,18 +1269,13 @@ We recommend that Astra Control Center manage the cluster it is deployed on firs
 </tr>
 </table>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/astra-control-center/images/important.svg" alt="Important">
-</td>
-<td class="content">
+<div class="ulist">
 <div class="title">What you&#8217;ll need</div>
-Before you add a cluster, review and perform the necessary <a href="add-cluster-reqs.html" target="_blank" rel="noopener">prerequisite tasks</a>.
-</td>
-</tr>
-</table>
+<ul>
+<li>
+<p>Before you add a cluster, review and perform the necessary <a href="add-cluster-reqs.html" target="_blank" rel="noopener">prerequisite tasks</a>.</p>
+</li>
+</ul>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -1361,39 +1364,24 @@ After you add a cluster to be managed in Astra Control Center, it might take a f
 <h2 id="add-a-storage-backend">Add a storage backend</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can add a storage backend so that Astra Control can manage its resources. Managing storage clusters in Astra Control as a storage backend enables you to get linkages between persistent volumes (PVs) and the storage backend as well as additional storage metrics.</p>
+<p>You can add a storage backend so that Astra Control can manage its resources. You can deploy a storage backend on a managed cluster or use an existing storage backend.</p>
 </div>
 <div class="paragraph">
-<p>You can add a discovered storage backend by navigating prompts from the Dashboard or the Backends menu.</p>
+<p>Managing storage clusters in Astra Control as a storage backend enables you to get linkages between persistent volumes (PVs) and the storage backend as well as additional storage metrics.</p>
 </div>
 <div class="ulist">
-<div class="title">What you&#8217;ll need</div>
+<div class="title">What you&#8217;ll need for existing Astra Data Store deployments</div>
 <ul>
 <li>
-<p>You have <a href="../get-started/setup_overview.html#add-cluster">added a cluster</a> and it is managed by Astra Control.</p>
-<div class="admonitionblock note">
+<p>You have added your Kubernetes app cluster and the underlying compute cluster.</p>
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+<img src="/us-en/astra-control-center/images/important.svg" alt="Important">
 </td>
 <td class="content">
-The managed cluster has a supported backend attached to it that can be discovered by Astra Control.
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>For Astra Data Store preview installations: You have added your Kubernetes app cluster.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
-</td>
-<td class="content">
-After you add your Kubernetes app cluster for Astra Data Store, the cluster appears as <code>unmanaged</code> in the list of discovered backends. You must next add the compute cluster that contains Astra Data Store and underlies the Kubernetes app cluster. You can do this from <strong>Backends</strong> in the UI. Select the Actions menu for the cluster, select <code>Manage</code>, and <a href="../get-started/setup_overview.html#add-cluster">add the cluster</a>. After the cluster state of <code>unmanaged</code> changes to the name of the Kubernetes cluster, you can proceed with adding a backend.
+After you add your Kubernetes app cluster for Astra Data Store and it is managed by Astra Control, the cluster appears as <code>unmanaged</code> in the list of discovered backends. You must next add the compute cluster that contains Astra Data Store and underlies the Kubernetes app cluster. You can do this from <strong>Backends</strong> in the UI. Select the Actions menu for the cluster, select <code>Manage</code>, and <a href="../get-started/setup_overview.html#add-cluster">add the cluster</a>. After the cluster state of <code>unmanaged</code> changes to the name of the Kubernetes cluster, you can proceed with adding a backend.
 </td>
 </tr>
 </table>
@@ -1401,25 +1389,45 @@ After you add your Kubernetes app cluster for Astra Data Store, the cluster appe
 </li>
 </ul>
 </div>
+<div class="ulist">
+<div class="title">What you&#8217;ll need for new Astra Data Store deployments</div>
+<ul>
+<li>
+<p>You have <a href="../use/manage-packages-acc.html">uploaded the version of the installation bundle you intend to deploy</a> to a location that is accessible to Astra Control.</p>
+</li>
+<li>
+<p>You have added the Kubernetes cluster that you intend to use for deployment.</p>
+</li>
+<li>
+<p>You have uploaded the <a href="#add-a-license-for-astra-control-center">Astra Data Store license</a> for your deployment to a location that is accessible to Astra Control.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Options</div>
+<ul>
+<li>
+<p><a href="#deploy-storage-resources">Deploy storage resources</a></p>
+</li>
+<li>
+<p><a href="#use-an-existing-storage-backend">Use an existing storage backend</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="deploy-storage-resources">Deploy storage resources</h3>
+<div class="paragraph">
+<p>You can deploy a new Astra Data Store and manage the associated storage backend.</p>
+</div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Do one of the following:</p>
+<p>Navigate from the Dashboard or the Backends menu:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>From <strong>Dashboard</strong>:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>From the Storage backend section, select <strong>Add</strong>.</p>
-</li>
-<li>
-<p>From the Resource Summary &gt; Storage backends section, select <strong>Add</strong>.</p>
-</li>
-</ol>
-</div>
+<p>From <strong>Dashboard</strong>: From the Resource Summary, select a link from the Storage Backends pane and select <strong>Add</strong> from the Backends section.</p>
 </li>
 <li>
 <p>From <strong>Backends</strong>:</p>
@@ -1438,51 +1446,134 @@ After you add your Kubernetes app cluster for Astra Data Store, the cluster appe
 </div>
 </li>
 <li>
-<p>Do one of the following depending on your backend type:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Astra Data Store</strong>:</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>Select the <strong>Use existing</strong> tab.</p>
+<p>Select the <strong>Astra Data Store</strong> deployment option within the <strong>Deploy</strong> tab.</p>
 </li>
 <li>
-<p>Select the <strong>Astra Data Store</strong> tab.</p>
+<p>Select the Astra Data Store package to deploy:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter a name for the Astra Data Store application.</p>
 </li>
 <li>
-<p>Select the managed compute cluster and select <strong>Next</strong>.</p>
-</li>
-<li>
-<p>Confirm the backend details and select <strong>Manage storage backend</strong>.</p>
+<p>Choose the version of Astra Data Store you want to deploy.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If you have not yet uploaded the version you intend to deploy, you can use the <strong>Add package</strong> option or exit the wizard and use <a href="../use/manage-packages-acc.html">package management</a> to upload the installation bundle.
+</td>
+</tr>
+</table>
+</div>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p><strong>ONTAP</strong>:</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>Select the <strong>Use existing</strong> tab.</p>
+<p>Select an Astra Data Store license that you have previously uploaded or use the <strong>Add license</strong> option to upload a license to use with the application.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Astra Data Store licenses with full permissions are associated with your Kubernetes cluster, and these associated clusters should appear automatically. If there is no managed cluster, you can select the <strong>Add a Cluster</strong> option to add one to Astra Control management.<br>
+For Astra Data Store licenses, if no association has been made between the license and cluster, you can define this association on the next page of the wizard.
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
-<p>Enter the ONTAP admin credentials and select <strong>Review</strong>.</p>
+<p>If you have not added a Kubernetes cluster to Astra Control management, you need to do so from the <strong>Kubernetes cluster</strong> page. Select an existing cluster from the list or select <strong>add the underlying cluster</strong> to add a cluster to Astra Control management.</p>
 </li>
 <li>
-<p>Confirm the backend details and select <strong>Manage</strong>.</p>
+<p>Select the deployment template size for the Kubernetes cluster that will provide resources for Astra Data Store.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/tip.svg" alt="Tip">
+</td>
+<td class="content">
+When picking a template, select larger nodes with more memory and cores for larger workloads or a greater number of nodes for smaller workloads. You should select a template based on what your license allows. Each template option suggests the number of eligible nodes that satisfy the template pattern for memory and cores and capacity for each node.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Configure the nodes:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Add a node label to identify the pool of worker nodes that supports this Astra Data Store cluster.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/important.svg" alt="Important">
+</td>
+<td class="content">
+The label must be added to each individual node in the cluster that will be used for Astra Data Store deployment prior to the start of deployment or deployment will fail.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Configure the capacity (GiB) per node manually or select the maximum node capacity allowed.</p>
+</li>
+<li>
+<p>Configure a maximum number of nodes allowed in the cluster or allow the maximum number of nodes on the cluster.</p>
 </li>
 </ol>
 </div>
 </li>
-</ul>
+<li>
+<p>(Astra Data Store full licenses only) Enter the key of the label you want to use for Protection Domains.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Create at least three unique labels for the key for each node. For example, if your key is <code>astra.datastore.protection.domain</code>, you might create the following labels: <code>astra.datastore.protection.domain=domain1</code>,<code>astra.datastore.protection.domain=domain2</code>, and <code>astra.datastore.protection.domain=domain3</code>.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Configure the management network:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter a management IP address for Astra Data Store internal management that is on the same subnet as worker node IP addresses.</p>
+</li>
+<li>
+<p>Choose to use the same NIC for both management and data networks or configure them separately.</p>
+</li>
+<li>
+<p>Enter data network IP address pool, subnet mask and gateway for storage access.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Review the configuration and select <strong>Deploy</strong> to begin installation.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>The backend appears in <code>available</code> state in the list with summary information.</p>
-</div>
-</li>
-</ol>
+<div class="title">Result</div>
+<p>After a successful installation, the backend appears in <code>available</code> state in the backends list along with active performance information.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1495,6 +1586,99 @@ You might need to refresh the page for the backend to appear.
 </td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-an-existing-storage-backend">Use an existing storage backend</h3>
+<div class="paragraph">
+<p>You can bring a discovered ONTAP or Astra Data Store storage backend into Astra Control Center management.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Navigate from the Dashboard or the Backends menu:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>From <strong>Dashboard</strong>: From the Resource Summary, select a link from the Storage Backends pane and select <strong>Add</strong> from the Backends section.</p>
+</li>
+<li>
+<p>From <strong>Backends</strong>:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the left navigation area, select <strong>Backends</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Manage</strong> on a discovered backend from the managed cluster or select <strong>Add</strong> to manage an additional existing backend.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Select the <strong>Use existing</strong> tab.</p>
+</li>
+<li>
+<p>Do one of the following depending on your backend type:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Astra Data Store</strong>:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Select <strong>Astra Data Store</strong>.</p>
+</li>
+<li>
+<p>Select the managed compute cluster and select <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Confirm the backend details and select <strong>Add storage backend</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>ONTAP</strong>:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Select <strong>ONTAP</strong>.</p>
+</li>
+<li>
+<p>Enter the ONTAP admin credentials and select <strong>Review</strong>.</p>
+</li>
+<li>
+<p>Confirm the backend details and select <strong>Add storage backend</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Result</div>
+<p>The backend appears in <code>available</code> state in the list with summary information.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+You might need to refresh the page for the backend to appear.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
