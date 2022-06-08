@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">English</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">English</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/astra-control-center/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/astra-control-center/use/upgrade-acc.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/astra-control-center/use/upgrade-acc.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/astra-control-center/use/upgrade-acc.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-center/use/upgrade-acc.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/astra-control-center/use/upgrade-acc.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/us-en/astra-control-center/use/upgrade-acc.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/astra-control-center/use/upgrade-acc.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/astra-control-center/use/upgrade-acc.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/astra-control-center/use/upgrade-acc.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/astra-control-center/use/upgrade-acc.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -886,7 +878,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/index.html">
         Astra Control Center docs
       </a></li><li class="subfolders "><a href="/us-en/astra-control-center/release-notes/rn_overview.html">
@@ -1089,7 +1081,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-22 22:25:56 +0000">04/22/2022</time>
+    <time datetime="2022-06-08 17:22:48 +0000">06/08/2022</time>
     
   
 
@@ -1107,6 +1099,14 @@
           alt="amgrissino"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/36450105?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-mwallis">
+    <img  class="avatar avatar-small"
+          alt="netapp-mwallis"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/53353653?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1490,7 +1490,7 @@ Your registry path must match the registry path where you pushed the images in a
 <p>If you don&#8217;t have your own IngressController or ingress and have been using the Astra Control Center with its Traefik gateway as a LoadBalancer type service and would like to continue with that setup, specify another field <code>ingressType</code> (if not already present) and set it to <code>AccTraefik</code>.</p>
 <div class="listingblock">
 <div class="content">
-<pre>ingressType:AccTraefik</pre>
+<pre>ingressType: AccTraefik</pre>
 </div>
 </div>
 </li>
@@ -1498,7 +1498,7 @@ Your registry path must match the registry path where you pushed the images in a
 <p>If you want to switch to the default Astra Control Center generic ingress deployment, provide your own IngressController/Ingress setup (with TLS termination, etc.), open up a route to Astra Control Center, and set <code>ingressType</code> to <code>Generic</code>.</p>
 <div class="listingblock">
 <div class="content">
-<pre>ingressType:Generic</pre>
+<pre>ingressType: Generic</pre>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -1980,4 +1980,5 @@ The result should be empty.
     </script>
     <script src='/us-en/astra-control-center/js/www-ntap.js'></script>
     <script src='/us-en/astra-control-center/js/tabbed-blocks.js'></script>
+    <script src='/us-en/astra-control-center/js/sidebar.js'></script>
   </body></html>
