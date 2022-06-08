@@ -1081,7 +1081,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-31 19:57:49 +0000">05/31/2022</time>
+    <time datetime="2022-06-06 17:42:32 +0000">06/06/2022</time>
     
   
 
@@ -1179,14 +1179,14 @@
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+<img src="/us-en/astra-control-center/images/important.svg" alt="Important">
 </td>
 <td class="content">
-If you are using Red Hat’s Podman instead of Docker Engine, Podman commands can be used in place of Docker commands.
+(Applies to the Astra Data Store Early Access Program (EAP) release only) If you intend to manage Astra Data Store using Astra Control Center and enable VMware workflows, deploy Astra Control Center only on the <code>pcloud</code> namespace and not on the <code>netapp-acc</code> namespace or a custom namespace described in the steps of this procedure.
 </td>
 </tr>
 </table>
@@ -1199,6 +1199,18 @@ If you are using Red Hat’s Podman instead of Docker Engine, Podman commands ca
 </td>
 <td class="content">
 Do not execute the following command during the entirety of the installation process to avoid deleting all Astra Control Center pods: <code>kubectl delete -f astra_control_center_operator_deploy.yaml</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If you are using Red Hat’s Podman instead of Docker Engine, Podman commands can be used in place of Docker commands.
 </td>
 </tr>
 </table>
