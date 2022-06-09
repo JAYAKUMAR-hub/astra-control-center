@@ -1081,7 +1081,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-31 19:57:49 +0000">05/31/2022</time>
+    <time datetime="2022-06-08 22:17:41 +0000">06/08/2022</time>
     
   
 
@@ -1245,15 +1245,15 @@ We recommend that Astra Control Center manage the cluster it is deployed on firs
 </td>
 <td class="content">
 <div class="paragraph">
-<p>When Astra Control manages a cluster, it keeps track of the cluster&#8217;s default StorageClass. If you change the StorageClass using <code>kubectl</code> commands, Astra Control reverts the change. To change the default StorageClass in a cluster managed by Astra Control, use one of the following methods:</p>
+<p>When Astra Control manages a cluster, it keeps track of the cluster&#8217;s default storage class. If you change the storage class using <code>kubectl</code> commands, Astra Control reverts the change. To change the default storage class in a cluster managed by Astra Control, use one of the following methods:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Use the Astra Control API <code>PUT /managedClusters</code> endpoint, and assign a different default StorageClass with the <code>DefaultStorageClass</code> parameter</p>
+<p>Use the Astra Control API <code>PUT /managedClusters</code> endpoint, and assign a different default storage class with the <code>DefaultStorageClass</code> parameter.</p>
 </li>
 <li>
-<p>Remove the cluster from Astra Control management and re-add it with a different default StorageClass selected</p>
+<p>Use the Astra Control web UI to assign a different default storage class. See <a href="#change-the-default-storage-class">Change the default storage class</a>.</p>
 </li>
 </ul>
 </div>
@@ -1806,6 +1806,37 @@ This option does not appear for the first bucket you create.
 </li>
 </ol>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="change-the-default-storage-class">Change the default storage class</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can change the default storage class for a cluster.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In the Astra Control Center web UI, select <strong>Clusters</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Clusters</strong> page, select the cluster that you want to change.</p>
+</li>
+<li>
+<p>Select the <strong>Storage</strong> tab.</p>
+</li>
+<li>
+<p>Select the <strong>Storage classes</strong> category.</p>
+</li>
+<li>
+<p>Select the <strong>Actions</strong> menu for the storage class that you want to set as default.</p>
+</li>
+<li>
+<p>Select <strong>Set as default</strong>.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
