@@ -1081,7 +1081,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-13 21:58:34 +0000">05/13/2022</time>
+    <time datetime="2022-06-15 22:13:02 +0000">06/15/2022</time>
     
   
 
@@ -1122,7 +1122,7 @@
 <div class="title">About this task</div>
 <ul>
 <li>
-<p>It is highly recommended to snapshot or backup your application before proceeding with the restore. This will allow you to clone from the snapshot or backup in the event the restore is unsuccessful.</p>
+<p>It is strongly recommended to take a snapshot of or back up your application before restoring it. This will enable you to clone from the snapshot or backup in the event that the restore is unsuccessful.</p>
 </li>
 <li>
 <p>If you use Helm to deploy apps, Astra Control Center requires Helm version 3. Managing and cloning apps deployed with Helm 3 (or upgraded from Helm 2 to Helm 3) are fully supported. Apps deployed with Helm 2 are not supported.</p>
@@ -1170,6 +1170,18 @@
 </li>
 <li>
 <p>Select <strong>Review</strong>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If you restore to a namespace that was previously deleted, a new namespace with the same name is created as part of the restore process. Any users that had rights to manage apps in the previously deleted namespace need to manually restore rights to the newly re-created namespace.
+</td>
+</tr>
+</table>
+</div>
 </li>
 </ul>
 </div>
@@ -1190,7 +1202,7 @@
 <img src="/us-en/astra-control-center/images/note.svg" alt="Note">
 </td>
 <td class="content">
-After a data protection operation (clone, backup, restore) and subsequent persistent volume resize, there is up to a twenty-minute delay before the new volume size is shown in the UI. The data protection operation is successful within minutes, and you can use the management software for the storage backend to confirm the change in volume size.
+After a data protection operation (clone, backup, restore) and subsequent persistent volume resize, there is a delay of up to twenty minutes before the new volume size is shown in the web UI. The data protection operation is successful within minutes, and you can use the management software for the storage backend to confirm the change in volume size.
 </td>
 </tr>
 </table>
