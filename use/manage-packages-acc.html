@@ -1081,7 +1081,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 20:51:08 +0000">05/09/2022</time>
+    <time datetime="2022-06-15 15:57:22 +0000">06/15/2022</time>
     
   
 
@@ -1124,7 +1124,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="upload-a-software-package-to-the-repositories">Upload a software package to the repositories</h2>
+<h2 id="upload-software-package-images-to-the-repositories">Upload software package images to the repositories</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Astra Control Center references package images and artifacts in connected repositories. You can upload images and artifacts to the repositories using the CLI.</p>
@@ -1139,35 +1139,45 @@
 <p>Extract the compressed package file, and change directory to the location of the Astra Control bundle file (for example, <code>acc.manifest.bundle.yaml</code>).</p>
 </li>
 <li>
-<p>Push the package images to the Docker repository. Make the following substitutions:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Replace BUNDLE_FILE with the name of the Astra Control bundle file.</p>
-</li>
-<li>
-<p>Replace MY_REGISTRY with the URL of the Docker repository.</p>
-</li>
-<li>
-<p>Replace MY_REGISTRY_USER and MY_REGISTRY_PASSWORD with the credentials for the repository.</p>
-<div class="listingblock">
-<div class="content">
-<pre>kubectl astra packages push-images -m BUNDLE_FILE -r MY_REGISTRY -u MY_REGISTRY_USER -p MY_REGISTRY_PASSWORD</pre>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Copy the package artifacts to the artifact repository. Replace BUNDLE_FILE with the name of the Astra Control bundle file, and NETWORK_LOCATION with the network location to copy the artifact files to:</p>
-<div class="listingblock">
-<div class="content">
-<pre>kubectl astra packages copy-artifacts -m BUNDLE_FILE -n NETWORK_LOCATION</pre>
-</div>
-</div>
+<p>Push the package images to the Docker repository by running the following script. Replace the value of the <code>REGISTRY</code> variable with the URL of your own registry:</p>
 </li>
 </ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># Replace the registry value:
+export REGISTRY=registry.url.com
+
+export PACKAGENAME=astrads
+export PACKAGEVERSION=22.5.0-6371157
+export DIRECTORYNAME=astrads
+
+for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
+  # Load to local cache
+  astraImage=$(docker load --input ${astraImageFile} | sed 's/Loaded image: //')
+  # Remove path and keep imageName
+  astraImageNoPath=$(echo ${astraImage} | sed 's:.*/::')
+  # Tag with local image repo.
+  docker tag ${astraImage} ${REGISTRY}/netapp/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+  # Push to the local repo.
+  docker push ${REGISTRY}/netapp/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+done
+
+export PACKAGENAME=vasa-provider
+export PACKAGEVERSION=2022.5.0
+export DIRECTORYNAME=vasa
+
+for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
+  # Load to local cache
+  astraImage=$(docker load --input ${astraImageFile} | sed 's/Loaded image: //')
+  # Remove path and keep imageName
+  astraImageNoPath=$(echo ${astraImage} | sed 's:.*/::')
+  # Tag with local image repo.
+  docker tag ${astraImage} ${REGISTRY}/netapp/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+  # Push to the local repo.
+  docker push ${REGISTRY}/netapp/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+done</pre>
+</div>
 </div>
 </div>
 </div>
