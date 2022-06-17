@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Learn how to deploy MariaDB from the Bitnami Helm chart. After you deploy MariaDB on your cluster, you can manage the application with Astra Control.">
-  <meta name="keywords" content=" how to deploy mariadb from helm chart, how to set up maria db with astra, mariadb helm chart, deploy mariadb, helm chart, bitnami, astra, astra control, kubernetes"><!-- Icons -->
+  <meta name="keywords" content=" how to deploy mariadb from helm chart, how to set up maria db with astra, mariadb helm chart, deploy mariadb, helm chart, bitnami, astra control, kubernetes"><!-- Icons -->
   <link rel="icon" href="/us-en/astra-control-center/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -1081,7 +1081,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-11 21:21:21 +0000">10/11/2021</time>
+    <time datetime="2022-06-17 14:28:05 +0000">06/17/2022</time>
     
   
 
@@ -1192,7 +1192,7 @@ For Astra Control Center, you can add the cluster to Astra Control Center first 
 <p>Deploy MariaDB with the command:</p>
 <div class="listingblock">
 <div class="content">
-<pre>Helm install &lt;name&gt; --namespace &lt;namespace&gt; --create-namespace -–set persistence.storageClass=&lt;storage_class&gt;</pre>
+<pre>helm install &lt;name&gt; bitnami/MariaDB –namespace &lt;namespace&gt; --create-namespace –set global.storageClass=&lt;storage_class_name&gt;</pre>
 </div>
 </div>
 <div class="admonitionblock note">
