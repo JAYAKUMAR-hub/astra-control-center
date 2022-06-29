@@ -1043,7 +1043,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-12 00:40:34 +0000">01/12/2022</time>
+    <time datetime="2022-06-29 16:45:36 +0000">06/29/2022</time>
     
   
 
@@ -1053,6 +1053,14 @@
           alt="netapp-dbagwell"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/53352450?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-mwallis">
+    <img  class="avatar avatar-small"
+          alt="netapp-mwallis"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/53353653?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1103,10 +1111,10 @@
 <div class="title">Steps</div>
 <ul>
 <li>
-<p><a href="#download-the-astra-control-center-bundle">Download the Astra Control Center bundle</a></p>
+<p><a href="#download-and-unpack-the-astra-control-center-bundle">Download and unpack the Astra Control Center bundle</a></p>
 </li>
 <li>
-<p><a href="#unpack-the-bundle-and-change-directory">Unpack the bundle and change directory</a></p>
+<p><a href="#install-the-netapp-astra-kubectl-plugin">Install the NetApp Astra kubectl plugin</a></p>
 </li>
 <li>
 <p><a href="#add-the-images-to-your-local-registry">Add the images to your local registry</a></p>
@@ -1125,7 +1133,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="download-the-astra-control-center-bundle">Download the Astra Control Center bundle</h2>
+<h2 id="download-and-unpack-the-astra-control-center-bundle">Download and unpack the Astra Control Center bundle</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -1133,7 +1141,7 @@
 <p>Download the Astra Control Center bundle (<code>astra-control-center-[version].tar.gz</code>) from the <a href="https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab" target="_blank" rel="noopener">NetApp Support Site</a>.</p>
 </li>
 <li>
-<p>Download the zip of Astra Control Center certificates and keys from <a href="https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab" target="_blank" rel="noopener">NetApp Support Site</a>.</p>
+<p>Download the zip of Astra Control Center certificates and keys from the <a href="https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab" target="_blank" rel="noopener">NetApp Support Site</a>.</p>
 </li>
 <li>
 <p>(Optional) Use the following command to verify the signature of the bundle:</p>
@@ -1143,15 +1151,6 @@
 </div>
 </div>
 </li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="unpack-the-bundle-and-change-directory">Unpack the bundle and change directory</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
 <li>
 <p>Extract the images:</p>
 <div class="listingblock">
@@ -1160,11 +1159,36 @@
 </div>
 </div>
 </li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="install-the-netapp-astra-kubectl-plugin">Install the NetApp Astra kubectl plugin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The NetApp Astra <code>kubectl</code> command line plugin saves time when performing common tasks associated with deploying and upgrading Astra Control Center.</p>
+</div>
+<div class="paragraph">
+<div class="title">What you&#8217;ll need</div>
+<p>NetApp provides binaries for the plugin for different CPU architectures and operating systems. You need to know which CPU and operating system you have before you perform this task. On Linux and Mac operating systems, you can use the <code>uname -a</code> command to gather this information.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
 <li>
-<p>Change to the Astra directory.</p>
+<p>List the available NetApp Astra <code>kubectl</code> plugin binaries, and note the name of the file you need for your operating system and CPU architecture:</p>
 <div class="listingblock">
 <div class="content">
-<pre>cd astra-control-center-[version]</pre>
+<pre>ls kubectl-astra/</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Copy the file to the same location as the standard <code>kubectl</code> utility. In this example, the <code>kubectl</code> utility is located in the <code>/usr/local/bin</code> directory. Replace <code>&lt;binary-name&gt;</code> with the name of the file you need:</p>
+<div class="listingblock">
+<div class="content">
+<pre>cp kubectl-astra/&lt;binary-name&gt; /usr/local/bin/kubectl-astra</pre>
 </div>
 </div>
 </li>
@@ -1177,6 +1201,14 @@
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
+<li>
+<p>Change to the Astra directory:</p>
+<div class="listingblock">
+<div class="content">
+<pre>cd acc</pre>
+</div>
+</div>
+</li>
 <li>
 <p>Add the files in the Astra Control Center image directory to your local registry.</p>
 <div class="admonitionblock note">
