@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Deploy MySQL from a Helm chart</title>
+  <title>Understand Astra Control Center cluster CR options</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Deploy MySQL from a Helm chart" />
+  <meta property="og:title" content="Understand Astra Control Center cluster CR options" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/us-en/astra-control-center/solutions/mysql-deploy-from-helm-chart.html" />
-	<meta property="og:description" content="Learn how to deploy MySQL from the Bitnami Helm chart. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra Control." />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/astra-control-center/get-started/acc_cluster_cr_options.html" />
+	<meta property="og:description" content="Understand Astra Control Center cluster CR options for custom configurations during deployment." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/astra-control-center/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Learn how to deploy MySQL from the Bitnami Helm chart. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra Control.">
-  <meta name="keywords" content=" how to set up mysql, how to deploy mysql from helm chart, helm chart, deploy mysql, astra control, kubernetes"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Understand Astra Control Center cluster CR options for custom configurations during deployment.">
+  <meta name="keywords" content=" astra cr, cluster cr, astra control center, how to configure, deploy"><!-- Icons -->
   <link rel="icon" href="/us-en/astra-control-center/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[Deploy MySQL from a Helm chart](https://docs.netapp.com/us-en/astra-control-center/solutions/mysql-deploy-from-helm-chart.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/astra-control-center/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/solutions/mysql-deploy-from-helm-chart.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/astra-control-center/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/astra-control-center/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[Understand Astra Control Center cluster CR options](https://docs.netapp.com/us-en/astra-control-center/get-started/acc_cluster_cr_options.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/astra-control-center/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/get-started/acc_cluster_cr_options.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/astra-control-center/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/astra-control-center/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -290,15 +290,15 @@
       </div>
 
       <ul class="custom-dropdown-menu"><li>
-          <a href="https://docs.netapp.com/us-en/astra-control-center/solutions/mysql-deploy-from-helm-chart.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+          <a href="https://docs.netapp.com/us-en/astra-control-center/get-started/acc_cluster_cr_options.html" target="_self"><span translate="no" class="notranslate">English</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ja-jp/astra-control-center/solutions/mysql-deploy-from-helm-chart.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+          <a href="https://docs.netapp.com/ja-jp/astra-control-center/get-started/acc_cluster_cr_options.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-cn/astra-control-center/solutions/mysql-deploy-from-helm-chart.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+          <a href="https://docs.netapp.com/zh-cn/astra-control-center/get-started/acc_cluster_cr_options.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-tw/astra-control-center/solutions/mysql-deploy-from-helm-chart.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+          <a href="https://docs.netapp.com/zh-tw/astra-control-center/get-started/acc_cluster_cr_options.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/astra-control-center/solutions/mysql-deploy-from-helm-chart.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/ko-kr/astra-control-center/get-started/acc_cluster_cr_options.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
@@ -482,6 +482,35 @@
           </a>
           
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/astra-control-center/pdfs/sidebar/Install_Astra_Control_Center.pdf" 
+            
+          >
+            <img src="/us-en/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
+            Install Astra Control Center
+          </a>
+          
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
 
 
 
@@ -549,31 +578,6 @@
           </a>
           
 
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/us-en/astra-control-center/pdfs/sidebar/Manage_apps.pdf" 
-            
-          >
-            <img src="/us-en/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Manage apps
-          </a>
-          
-
-
-
-
-        </li>
-      </ul>
-    
-
-  
-
 
 
     
@@ -591,6 +595,8 @@
             Protect apps
           </a>
           
+
+
 
 
 
@@ -640,11 +646,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/astra-control-center/pdfs/sidebar/View_app_and_cluster_health.pdf" 
+              href="/us-en/astra-control-center/pdfs/sidebar/Monitor_app_and_cluster_health.pdf" 
             
           >
             <img src="/us-en/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            View app and cluster health
+            Monitor app and cluster health
           </a>
           
 
@@ -752,39 +758,6 @@
           
           <a target="_blank" 
             
-              href="/us-en/astra-control-center/pdfs/sidebar/Deploy_apps.pdf" 
-            
-          >
-            <img src="/us-en/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Deploy apps
-          </a>
-          
-
-
-
-
-    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
-  
-
-
-
-
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
               href="/us-en/astra-control-center/pdfs/sidebar/Knowledge_and_support.pdf" 
             
           >
@@ -868,8 +841,8 @@
         Data protection
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/licensing.html">
         Licensing
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/validated-vs-standard.html">
-        Validated vs standard apps
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/learn/app-management.html">
+        Understanding app management
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/choose-class-and-size.html">
         Storage classes and PV size
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/user-roles-namespaces.html">
@@ -884,9 +857,16 @@
       </a></li><li class="subfolders "><a href="/us-en/astra-control-center/get-started/install_overview.html">
         <div class="na-navbar-padding"> Installation overview</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/install_acc.html">
-        Install Astra Control Center
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/acc_operatorhub_install.html">
+      <ul><li class="subfolders "><a href="/us-en/astra-control-center/get-started/install_acc.html">
+        <div class="na-navbar-padding"> Install Astra Control Center</div>
+      </a>
+      <ul><li class="  active "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/acc_cluster_cr_options.html">
+        Understand Astra Control Center cluster CR options
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/understand-psp-restrictions.html">
+        Understand pod security policy restrictions
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/cert-manager-prereqs.html">
+        Configure an external cert-manager
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/acc_operatorhub_install.html">
         Install Astra Control Center using OpenShift OperatorHub
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/install_acc-cvo.html">
         Install Astra Control Center with a Cloud Volumes ONTAP storage backend
@@ -904,14 +884,9 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Use Astra</div>
       </a>
-      <ul><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Manage apps</div>
-      </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-apps.html">
         Start managing apps
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/define-custom-app.html">
-        Define a custom app
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Protect apps</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/protection-overview.html">
@@ -920,6 +895,8 @@
         Protect apps
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/restore-apps.html">
         Restore apps
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/replication.html">
+        Replicate apps to a remote system
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/clone-apps.html">
         Clone and migrate apps
       </a></li><li class="subfolders "><a href="/us-en/astra-control-center/use/execution-hooks.html">
@@ -928,7 +905,7 @@
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/execution-hook-examples.html">
         Execution hook examples
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> View app and cluster health</div>
+        <div class="na-navbar-padding"> Monitor app and cluster health</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/view-dashboard.html">
         Dashboard summary
@@ -960,7 +937,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-backend.html">
         Manage the storage backend
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/monitor-protect.html">
-        Monitor and protect infrastructure
+        Monitor infrastructure with Cloud Insights and Fluentd
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/unmanage.html">
         Unmanage apps and clusters
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/upgrade-acc.html">
@@ -972,17 +949,6 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/rest-api/api-intro.html">
         Introduction
-      </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Deploy apps</div>
-      </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/solutions/jenkins-deploy-from-helm-chart.html">
-        Deploy Jenkins
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/solutions/mariadb-deploy-from-helm-chart.html">
-        Deploy MariaDB
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/astra-control-center/solutions/mysql-deploy-from-helm-chart.html">
-        Deploy MySQL
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/solutions/postgres-deploy-from-helm-chart.html">
-        Deploy Postgres
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Knowledge and support</div>
       </a>
@@ -1038,23 +1004,23 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Deploy MySQL from a Helm chart</h1>
+  <h1 class="n-doc__component-detail-heading">Understand Astra Control Center cluster CR options</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-06-17 14:28:05 +0000">06/17/2022</time>
+    <time datetime="2022-07-25 21:42:47 +0000">07/25/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/amgrissino">
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-dbagwell">
     <img  class="avatar avatar-small"
-          alt="amgrissino"
+          alt="netapp-dbagwell"
           width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/36450105?v=4"
+          src="https://avatars.githubusercontent.com/u/53352450?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1066,144 +1032,337 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Learn how to deploy MySQL from the <a href="https://bitnami.com/stack/mysql/helm" target="_blank" rel="noopener">Bitnami Helm chart</a>. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra Control.</p>
+<p>You can use the following Astra Control Center cluster CR options to create custom configurations during deployment.</p>
 </div>
-<div class="paragraph">
-<p>MySQL is a validated app for Astra Control.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.netapp.com/us-en/astra/learn/validated-vs-standard.html" target="_blank" rel="noopener">Learn the difference between a validated app and a standard app in Astra Control Service</a>.</p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/astra-control-center/concepts/validated-vs-standard.html" target="_blank" rel="noopener">Learn the difference between a validated app and a standard app in Astra Control Center</a>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>These instructions apply to both Astra Control Service and Astra Control Center.</p>
-</div>
-<div class="admonitionblock note">
-<table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Applications deployed from Google Marketplace have not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
-</td>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Use</th>
+<th class="tableblock halign-left valign-top">Value Example</th>
+<th class="tableblock halign-left valign-top">Description</th>
 </tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">astraVersion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.5.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version of AstraControlCenter to deploy. You are provided a Helm repository with a corresponding version.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">astraAddress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">astra.example.com</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines how Astra will be found in the data center. This IP address and/or DNS A record must be created prior to provisioning Astra Control Center.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accountName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Astra Control Center account name. There can be only one.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:admin@example.com">admin@example.com</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The username of the administrator to be added as the first user of Astra. This email address will be notified by Astra Control as events warrant.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">firstName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SRE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The first name of the administrator supporting Astra.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The last name of the administrator supporting Astra.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">storageClass</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional (this is the default value)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ontap-gold</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The storage class to be used for PVCs. If not set, the default storage class will be used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">volumeReclaimPolicy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undefined</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reclaim policy to be set for persistent volumes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">astraResourcesScaler</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scaling options for AstraControlCenter Resource limits. See <a href="#configuration-combinations-and-incompatibilities">setting complexities</a> to understand how this settings affects others settings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">astraKubeConfigSecret</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">acc-kubeconfig-cred</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If this value is present and a secret exists, the operator will attempt to add that KubeConfig to become the first managed cluster.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ingressType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generic (this is the default value)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of ingress Astra Control Center should be configured for. Valid values are <code>Generic</code> and <code>AccTraefik</code>. See <a href="#configuration-combinations-and-incompatibilities">setting complexities</a> to understand how this settings affects others settings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">avpDeploy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true (this is the default value)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Option that allows a user to disable deployment of Astra Plugin for VMware vSphere operator.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imageRegistry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undefined</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The container image registry that is hosting the Astra application images, Astra Control Center Operator, and Astra Control Center Helm Repository.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imageRegistry.name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required if you are using imageRegistry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">example.registry.com/astra</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the image registry. Do not prefix with protocol.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imageRegistry.secret</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required if you are using imageRegistry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">astra-registry-cred</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the Kubernetes secret used to authenticate with the image registry.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">autoSupport</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undefined</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates participation status in NetApp&#8217;s pro-active support application, NetApp Active IQ. An internet connection is required (port 442) and all support data is anonymized.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">autoSupport.enrolled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional, but either <code>enrolled</code> or <code>url</code> fields must be selected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false (this value is the default)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enrolled determines if you want to send anonymous data to NetApp for support purposes. The default election is <code>false</code> and indicates no support data will be sent to NetApp.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">autoSupport.url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional, but either <code>enrolled</code> or <code>url</code> fields must be selected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://support.netapp.com/asupprod/post/1.0/postAsup" class="bare">https://support.netapp.com/asupprod/post/1.0/postAsup</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL determines where the anonymous data will be sent.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">crds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undefined</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undefined</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Options for how Astra Control Center should handle CRDs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">crds.externalTraefik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True (this value is the default)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">By default, Astra Control Center will install the required Traefik CRDs. CRDs are cluster-wide objects and installing them may have an impact on other parts of the cluster. You can use this flag to signal to Astra Control Center that these CRDs will be installed and managed by the cluster administrator outside of Astra Control Center.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">crds.externalCertManager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True (this value is the default)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">By default, Astra Control Center will install the required cert-manager CRDs. CRDs are cluster-wide objects and installing them may have an impact on other parts of the cluster. You can use this flag to signal to Astra Control Center that these CRDs will be installed and managed by the cluster administrator outside of Astra Control Center.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">crds.shouldUpgrade</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undefined</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Determines if CRDs should be upgraded when Astra Control Center is upgraded.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mtls</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Options for how Astra Control Center should implement service to service mTLS in the cluster. See <a href="#configuration-combinations-and-incompatibilities">setting complexities</a> to understand how this settings affects others settings</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mtls.enabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true (this value is the default)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">By default, Astra Control Center uses mTLS for service-to-service communication. This option should be disabled when using a service mesh to encrypt service-to-service communication instead.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mtls.certDuration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2140h (this value is the default duration)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The duration of time in hours to use as a certificate lifespan when issuing service TLS certificates. This setting only works when <code>mtls.enabled</code> is set to <code>true</code>.</p></td>
+</tr>
+</tbody>
 </table>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="requirements">Requirements</h2>
+<h2 id="configuration-combinations-and-incompatibilities">Configuration combinations and incompatibilities</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Some Astra Control Center cluster CR configuration settings greatly affect the way Astra Control Center is installed and could conflict with other settings. The content that follows describes important configuration settings and how to avoid incompatible combinations.</p>
+</div>
+<div class="sect2">
+<h3 id="astraresourcesscaler">astraResourcesScaler</h3>
+<div class="paragraph">
+<p>By default, Astra Control Center deploys with resource requests set for most of the components within Astra. This configuration allows the Astra Control Center software stack to perform better in environments under increased application load and scale.</p>
+</div>
+<div class="paragraph">
+<p>However, in scenarios using smaller development or test clusters, the CR field <code>AstraResourcesScalar</code> may be set to <code>Off</code>. This disables resource requests and allows for deployment on smaller clusters.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ingresstype">ingressType</h3>
+<div class="paragraph">
+<p>There are two valid values for ingressType:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>A cluster that has been added to Astra Control.</p>
-<div class="admonitionblock note">
+<p>Generic</p>
+</li>
+<li>
+<p>AccTraefik</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Generic (default)</div>
+<p>When <code>ingressType</code> is set to <code>Generic</code>, Astra Control does not install any ingress resources. The assumption is that the user has a common way of securing and routing traffic through their network to applications running on Kubernetes clusters and they want to use the same mechanisms here. When the user creates an ingress to route traffic to Astra Control, the ingress needs to point to the internal traefik service on port 80. Here is an example of an Nginx ingress resource that works with the Generic ingressType setting.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: netapp-acc-ingress
+  namespace: [netapp-acc or custom namespace]
+spec:
+  ingressClassName: [class name for nginx controller]
+  tls:
+  - hosts:
+    - &lt;ACC address&gt;
+    secretName: [tls secret name]
+  rules:
+  - host: &lt;ACC addess&gt;
+    http:
+      paths:
+        - path:
+          backend:
+            service:
+              name: traefik
+              port:
+                number: 80
+          pathType: ImplementationSpecific</pre>
+</div>
+</div>
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+<img src="/us-en/astra-control-center/images/warning.svg" alt="Warning">
 </td>
 <td class="content">
-For Astra Control Center, you can add the cluster to Astra Control Center first or add the app first.
+When mTLS is disabled using the mtls.enabled setting in the CR, you must use <code>ingressType: Generic</code>.
 </td>
 </tr>
 </table>
 </div>
-</li>
-<li>
-<p>Updated versions of Helm (version 3.2+) and Kubectl installed on a local machine with the proper kubeconfig for the cluster</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="install-mysql">Install MySQL</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Two important notes on this process:</p>
+<div class="title">AccTraefik</div>
+<p>When <code>ingressType</code> is set to <code>AccTraefik</code>, Astra Control Center deploys its Traefik gateway as a Kubernetes LoadBalancer type service. Users need to provide an external Load Balancer (like MetalLB) for Astra Control Center to get an external IP.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mtls">mtls</h3>
+<div class="paragraph">
+<p>The settings used in the CR determine how intra-application communication is secured. It is very important for the user to know ahead of time whether they will be using a service mesh or not.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>You must deploy your app after the cluster is added to Astra Control Service, not before. Astra Control Center will accept applications before or after the cluster is added to Astra Control Center.</p>
-</li>
-<li>
-<p>We recommend that you deploy the Helm chart in a namespace other than the default.</p>
+<p><code>enabled=true</code>: When this setting is enabled, Astra will deploy an internal service-to-service communication network that secures all traffic within the application.</p>
 </li>
 </ul>
 </div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>Add the Bitnami chart repo:</p>
-<div class="listingblock">
-<div class="content">
-<pre>helm repo add bitnami https://charts.bitnami.com/bitnami</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Deploy MySQL with the command:</p>
-<div class="listingblock">
-<div class="content">
-<pre>helm install &lt;name&gt; bitnami/mysql -–namespace &lt;namespace&gt; --create-namespace
-–-set global.storageClass=&lt;storage_class_name&gt;</pre>
-</div>
-</div>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+<img src="/us-en/astra-control-center/images/warning.svg" alt="Warning">
 </td>
 <td class="content">
-If the volume size is changed, use Kibibyte (Ki), Mebibyte (Mi) or Gibibyte (Gi) units.
+Do not cover Astra Control Center in a service mesh while this setting is <code>true</code>.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>You need to define the storage class only in these situations:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>You are using Astra Control Service and you don’t want to use the default storage class.</p>
-</li>
-<li>
-<p>You are using Astra Control Center and haven’t yet imported the cluster into Astra Control Center. Or, you have imported the cluster, but don&#8217;t want to use the default storage class.</p>
+<p><code>enabled=false</code>: When this setting is disabled, Astra Control Center will not secure internal traffic and you must secure Astra namespaces independently with a service mesh.</p>
 </li>
 </ul>
 </div>
-</li>
-</ol>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/warning.svg" alt="Warning">
+</td>
+<td class="content">
+When mTLS is disabled using the mtls.enabled setting in the CR, you must use <code>ingressType: Generic</code>.
+</td>
+</tr>
+</table>
 </div>
-<div class="paragraph">
-<div class="title">Result</div>
-<p>This does the following:</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/warning.svg" alt="Warning">
+</td>
+<td class="content">
+If no service mesh is used and this setting is disabled, internal communication will be unsecure.
+</td>
+</tr>
+</table>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Creates a namespace.</p>
-</li>
-<li>
-<p>Deploys MySQL on the namespace.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>After the pods are online, you can manage the app with Astra Control. Astra Control allows you to manage an app with its name, at the namespace level, or by using a helm label.</p>
 </div>
 </div>
 </div>

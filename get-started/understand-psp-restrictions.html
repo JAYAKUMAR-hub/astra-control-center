@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Deploy MariaDB from a Helm chart</title>
+  <title>Understand pod security policy restrictions</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Deploy MariaDB from a Helm chart" />
+  <meta property="og:title" content="Understand pod security policy restrictions" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/us-en/astra-control-center/solutions/mariadb-deploy-from-helm-chart.html" />
-	<meta property="og:description" content="Learn how to deploy MariaDB from the Bitnami Helm chart. After you deploy MariaDB on your cluster, you can manage the application with Astra Control." />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/astra-control-center/get-started/understand-psp-restrictions.html" />
+	<meta property="og:description" content="You need to understand how pod security policies work before installing Astra Control Center." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/astra-control-center/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Learn how to deploy MariaDB from the Bitnami Helm chart. After you deploy MariaDB on your cluster, you can manage the application with Astra Control.">
-  <meta name="keywords" content=" how to deploy mariadb from helm chart, how to set up maria db with astra, mariadb helm chart, deploy mariadb, helm chart, bitnami, astra control, kubernetes"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You need to understand how pod security policies work before installing Astra Control Center.">
+  <meta name="keywords" content=" login, Astra Control Center, web ui, tls, certificate"><!-- Icons -->
   <link rel="icon" href="/us-en/astra-control-center/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[Deploy MariaDB from a Helm chart](https://docs.netapp.com/us-en/astra-control-center/solutions/mariadb-deploy-from-helm-chart.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/astra-control-center/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/solutions/mariadb-deploy-from-helm-chart.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/astra-control-center/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/astra-control-center/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[Understand pod security policy restrictions](https://docs.netapp.com/us-en/astra-control-center/get-started/understand-psp-restrictions.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/astra-control-center/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/get-started/understand-psp-restrictions.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/astra-control-center/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/astra-control-center/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -290,15 +290,15 @@
       </div>
 
       <ul class="custom-dropdown-menu"><li>
-          <a href="https://docs.netapp.com/us-en/astra-control-center/solutions/mariadb-deploy-from-helm-chart.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+          <a href="https://docs.netapp.com/us-en/astra-control-center/get-started/understand-psp-restrictions.html" target="_self"><span translate="no" class="notranslate">English</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ja-jp/astra-control-center/solutions/mariadb-deploy-from-helm-chart.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+          <a href="https://docs.netapp.com/ja-jp/astra-control-center/get-started/understand-psp-restrictions.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-cn/astra-control-center/solutions/mariadb-deploy-from-helm-chart.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+          <a href="https://docs.netapp.com/zh-cn/astra-control-center/get-started/understand-psp-restrictions.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-tw/astra-control-center/solutions/mariadb-deploy-from-helm-chart.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+          <a href="https://docs.netapp.com/zh-tw/astra-control-center/get-started/understand-psp-restrictions.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/astra-control-center/solutions/mariadb-deploy-from-helm-chart.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/ko-kr/astra-control-center/get-started/understand-psp-restrictions.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
@@ -482,6 +482,35 @@
           </a>
           
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/us-en/astra-control-center/pdfs/sidebar/Install_Astra_Control_Center.pdf" 
+            
+          >
+            <img src="/us-en/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
+            Install Astra Control Center
+          </a>
+          
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
 
 
 
@@ -549,31 +578,6 @@
           </a>
           
 
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/us-en/astra-control-center/pdfs/sidebar/Manage_apps.pdf" 
-            
-          >
-            <img src="/us-en/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Manage apps
-          </a>
-          
-
-
-
-
-        </li>
-      </ul>
-    
-
-  
-
 
 
     
@@ -591,6 +595,8 @@
             Protect apps
           </a>
           
+
+
 
 
 
@@ -640,11 +646,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/astra-control-center/pdfs/sidebar/View_app_and_cluster_health.pdf" 
+              href="/us-en/astra-control-center/pdfs/sidebar/Monitor_app_and_cluster_health.pdf" 
             
           >
             <img src="/us-en/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            View app and cluster health
+            Monitor app and cluster health
           </a>
           
 
@@ -752,39 +758,6 @@
           
           <a target="_blank" 
             
-              href="/us-en/astra-control-center/pdfs/sidebar/Deploy_apps.pdf" 
-            
-          >
-            <img src="/us-en/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Deploy apps
-          </a>
-          
-
-
-    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
-  
-
-
-
-
-
-
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
               href="/us-en/astra-control-center/pdfs/sidebar/Knowledge_and_support.pdf" 
             
           >
@@ -868,8 +841,8 @@
         Data protection
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/licensing.html">
         Licensing
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/validated-vs-standard.html">
-        Validated vs standard apps
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/learn/app-management.html">
+        Understanding app management
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/choose-class-and-size.html">
         Storage classes and PV size
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/user-roles-namespaces.html">
@@ -884,9 +857,16 @@
       </a></li><li class="subfolders "><a href="/us-en/astra-control-center/get-started/install_overview.html">
         <div class="na-navbar-padding"> Installation overview</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/install_acc.html">
-        Install Astra Control Center
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/acc_operatorhub_install.html">
+      <ul><li class="subfolders "><a href="/us-en/astra-control-center/get-started/install_acc.html">
+        <div class="na-navbar-padding"> Install Astra Control Center</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/acc_cluster_cr_options.html">
+        Understand Astra Control Center cluster CR options
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/understand-psp-restrictions.html">
+        Understand pod security policy restrictions
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/cert-manager-prereqs.html">
+        Configure an external cert-manager
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/acc_operatorhub_install.html">
         Install Astra Control Center using OpenShift OperatorHub
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/install_acc-cvo.html">
         Install Astra Control Center with a Cloud Volumes ONTAP storage backend
@@ -904,14 +884,9 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Use Astra</div>
       </a>
-      <ul><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Manage apps</div>
-      </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-apps.html">
         Start managing apps
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/define-custom-app.html">
-        Define a custom app
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Protect apps</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/protection-overview.html">
@@ -920,6 +895,8 @@
         Protect apps
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/restore-apps.html">
         Restore apps
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/replication.html">
+        Replicate apps to a remote system
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/clone-apps.html">
         Clone and migrate apps
       </a></li><li class="subfolders "><a href="/us-en/astra-control-center/use/execution-hooks.html">
@@ -928,7 +905,7 @@
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/execution-hook-examples.html">
         Execution hook examples
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> View app and cluster health</div>
+        <div class="na-navbar-padding"> Monitor app and cluster health</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/view-dashboard.html">
         Dashboard summary
@@ -960,7 +937,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-backend.html">
         Manage the storage backend
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/monitor-protect.html">
-        Monitor and protect infrastructure
+        Monitor infrastructure with Cloud Insights and Fluentd
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/unmanage.html">
         Unmanage apps and clusters
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/upgrade-acc.html">
@@ -972,17 +949,6 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/rest-api/api-intro.html">
         Introduction
-      </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Deploy apps</div>
-      </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/solutions/jenkins-deploy-from-helm-chart.html">
-        Deploy Jenkins
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/astra-control-center/solutions/mariadb-deploy-from-helm-chart.html">
-        Deploy MariaDB
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/solutions/mysql-deploy-from-helm-chart.html">
-        Deploy MySQL
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/solutions/postgres-deploy-from-helm-chart.html">
-        Deploy Postgres
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Knowledge and support</div>
       </a>
@@ -1038,26 +1004,18 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Deploy MariaDB from a Helm chart</h1>
+  <h1 class="n-doc__component-detail-heading">Understand pod security policy restrictions</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-06-17 14:28:05 +0000">06/17/2022</time>
+    <time datetime="2022-08-01 16:44:57 +0000">08/01/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/amgrissino">
-    <img  class="avatar avatar-small"
-          alt="amgrissino"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/36450105?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 
@@ -1066,159 +1024,228 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Learn how to deploy MariaDB from the <a href="https://bitnami.com/stack/mariadb/helm" target="_blank" rel="noopener">Bitnami Helm chart</a>. After you deploy MariaDB on your cluster, you can manage the application with Astra Control.</p>
+<p>Astra Control Center supports privilege limitation through pod security policies (PSPs). Pod security policies enable you to limit what users or groups are able to run containers and what privileges those containers can have.</p>
 </div>
 <div class="paragraph">
-<p>MariaDB is a validated app for Astra.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.netapp.com/us-en/astra/learn/validated-vs-standard.html" target="_blank" rel="noopener">Learn the difference between a validated app and a standard app in Astra Control Service</a>.</p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/astra-control-center/concepts/validated-vs-standard.html" target="_blank" rel="noopener">Learn the difference between a validated app and a standard app in Astra Control Center</a>.</p>
-</li>
-</ul>
+<p>Some Kubernetes distributions, such as RKE2, have a default pod security policy that is too restrictive, and causes problems when installing Astra Control Center.</p>
 </div>
 <div class="paragraph">
-<p>These instructions apply to both Astra Control Service and Astra Control Center.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Applications deployed from Google Marketplace have not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
-</td>
-</tr>
-</table>
+<p>You can use the information and examples included here to understand the pod security policies that Astra Control Center creates, and configure pod security policies that provide the protection you need without interfering with Astra Control Center functions.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="requirements">Requirements</h2>
+<h2 id="psps-installed-by-astra-control-center">PSPs installed by Astra Control Center</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>A cluster that has been added to Astra Control.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
-</td>
-<td class="content">
-For Astra Control Center, you can add the cluster to Astra Control Center first or add the app first.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Astra Control Center creates several pod security policies during installation. Some of these are permanent, and some of them are created during certain operations and are removed once the operation is complete.</p>
 </div>
-</li>
-<li>
-<p>Updated versions of Helm (version 3.2+) and Kubectl installed on a local machine with the proper kubeconfig for the cluster</p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="psps-created-during-installation">PSPs created during installation</h3>
+<div class="paragraph">
+<p>During Astra Control Center installation, the Astra Control Center operator installs a custom pod security policy, a Role object, and a RoleBinding object to support the deployment of Astra Control Center services in the Astra Control Center namespace.</p>
+</div>
+<div class="paragraph">
+<p>The new policy and objects have the following attributes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">$ kubectl get psp
+NAME                           PRIV    CAPS          SELINUX    RUNASUSER          FSGROUP     SUPGROUP    READONLYROOTFS   VOLUMES
+avp-psp                        false                 RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *
+netapp-astra-deployment-psp    false                 RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *
+
+$ kubectl get role
+NAME                                     CREATED AT
+netapp-astra-deployment-role             2022-06-27T19:34:58Z
+
+$ kubectl get rolebinding
+NAME                                     ROLE                                          AGE
+netapp-astra-deployment-rb               Role/netapp-astra-deployment-role             32m</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="psps-created-during-backup-operations">PSPs created during backup operations</h3>
+<div class="paragraph">
+<p>During backup operations, Astra Control Center creates a dynamic pod security policy, a ClusterRole object, and a RoleBinding object. These support the backup process, which happens in a separate namespace.</p>
+</div>
+<div class="paragraph">
+<p>The new policy and objects have the following attributes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">$ kubectl get psp
+NAME                           PRIV    CAPS                            SELINUX    RUNASUSER          FSGROUP     SUPGROUP    READONLYROOTFS   VOLUMES
+netapp-astra-backup            false   DAC_READ_SEARCH                 RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *
+
+$ kubectl get role
+NAME                  CREATED AT
+netapp-astra-backup   2022-07-21T00:00:00Z
+
+$ kubectl get rolebinding
+NAME                  ROLE                       AGE
+netapp-astra-backup   Role/netapp-astra-backup   62s</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="psps-created-during-cluster-management">PSPs created during cluster management</h3>
+<div class="paragraph">
+<p>When you manage a cluster, Astra Control Center installs the netapp-monitoring operator in the managed cluster. This operator creates a pod security policy, a ClusterRole object, and a RoleBinding object to deploy telemetry services in the Astra Control Center namespace.</p>
+</div>
+<div class="paragraph">
+<p>The new policy and objects have the following attributes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">$ kubectl get psp
+NAME                           PRIV    CAPS                            SELINUX    RUNASUSER          FSGROUP     SUPGROUP    READONLYROOTFS   VOLUMES
+netapp-monitoring-psp-nkmo     true    AUDIT_WRITE,NET_ADMIN,NET_RAW   RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *
+
+$ kubectl get role
+NAME                                           CREATED AT
+netapp-monitoring-role-privileged              2022-07-21T00:00:00Z
+
+$ kubectl get rolebinding
+NAME                                                  ROLE                                                AGE
+netapp-monitoring-role-binding-privileged             Role/netapp-monitoring-role-privileged              2m5s</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="install-mariadb">Install MariaDB</h2>
+<h2 id="enable-network-communication-between-namespaces">Enable network communication between namespaces</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Two important notes on this process:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>You must deploy your app after the cluster is added to Astra Control Service, not before. Astra Control Center will accept applications before or after the cluster is added to Astra Control Center.</p>
-</li>
-<li>
-<p>You must deploy the Helm chart in a namespace other than the default.</p>
-</li>
-</ul>
+<p>Some environments use NetworkPolicy constructs to restrict traffic between namespaces. The Astra Control Center operator, Astra Control Center, and the Astra Plugin for VMware vSphere are all in different namespaces. The services in these different namespaces need to be able to communicate with one another. To enable this communication, follow these steps.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Add the Bitnami chart repo:</p>
+<p>Delete any NetworkPolicy resources that exist in the Astra Control Center namespace:</p>
 <div class="listingblock">
 <div class="content">
-<pre>helm repo add bitnami https://charts.bitnami.com/bitnami</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">$kubectl get networkpolicy -n netapp-acc</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Deploy MariaDB with the command:</p>
+<p>For each NetworkPolicy object that is returned by the preceding command, use the following command to delete it. Replace &lt;OBJECT_NAME&gt; with the name of the returned object:</p>
 <div class="listingblock">
 <div class="content">
-<pre>helm install &lt;name&gt; bitnami/MariaDB –-namespace &lt;namespace&gt; --create-namespace
-–-set global.storageClass=&lt;storage_class_name&gt;</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">$kubectl delete networkpolicy &lt;OBJECT_NAME&gt; -n netapp-acc</code></pre>
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
-</td>
-<td class="content">
-If the volume size is changed, use Kibibyte (Ki), Mebibyte (Mi) or Gibibyte (Gi) units.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>You need to define the storage class only in these situations:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>You are using Astra Control Service and you don’t want to use the default storage class.</p>
 </li>
 <li>
-<p>You are using Astra Control Center and haven’t yet imported the cluster into Astra Control Center. Or, you have imported the cluster, but don&#8217;t want to use the default storage class.</p>
+<p>Apply the following resource file to configure the acc-avp-network-policy object to allow Astra Plugin for VMware vSphere services to make requests to Astra Control Center services. Replace the information in brackets &lt;&gt; with information from your environment:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: acc-avp-network-policy
+  namespace: &lt;ACC_NAMESPACE_NAME&gt; # REPLACE THIS WITH THE ASTRA CONTROL CENTER NAMESPACE NAME
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: &lt;PLUGIN_NAMESPACE_NAME&gt; # REPLACE THIS WITH THE ASTRA PLUGIN FOR VMWARE VSPHERE NAMESPACE NAME</code></pre>
+</div>
+</div>
 </li>
-</ul>
+<li>
+<p>Apply the following resource file to configure the acc-operator-network-policy object to allow the Astra Control Center operator to communicate with Astra Control Center services. Replace the information in brackets &lt;&gt; with information from your environment:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: acc-operator-network-policy
+  namespace: &lt;ACC_NAMESPACE_NAME&gt; # REPLACE THIS WITH THE ASTRA CONTROL CENTER NAMESPACE NAME
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: &lt;NETAPP-ACC-OPERATOR&gt; # REPLACE THIS WITH THE OPERATOR NAMESPACE NAME</code></pre>
+</div>
 </div>
 </li>
 </ol>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="remove-resource-limitations">Remove resource limitations</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<div class="title">Result</div>
-<p>This does the following:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Creates a namespace.</p>
-</li>
-<li>
-<p>Deploys MariaDB on the namespace.</p>
-</li>
-<li>
-<p>Creates a database.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/astra-control-center/images/warning.svg" alt="Warning">
-</td>
-<td class="content">
-This method of setting the password at deployment is insecure. We do not recommend this for a production environment.
-</td>
-</tr>
-</table>
+<p>Some environments use the ResourceQuotas and LimitRanges objects to prevent the resources in a namespace from consuming all available CPU and memory on the cluster. Astra Control Center does not set maximum limits, so it will not be in compliance with those resources. You need to remove them from the namespaces where you plan to install Astra Control Center.</p>
 </div>
 <div class="paragraph">
-<p>After the pods are online, you can manage the app with Astra Control. Astra Control enables you to manage an app at the namespace level or by using a helm label.</p>
+<p>You can use the following steps to retrieve and remove these quotas and limits. In these examples, the command output is shown immediately after the command.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Get the resource quotas in the netapp-acc namespace:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">$ kubectl get quota -n netapp-acc
+
+NAME          AGE   REQUEST                                        LIMIT
+pods-high     16s   requests.cpu: 0/20, requests.memory: 0/100Gi   limits.cpu: 0/200, limits.memory: 0/1000Gi
+pods-low      15s   requests.cpu: 0/1, requests.memory: 0/1Gi      limits.cpu: 0/2, limits.memory: 0/2Gi
+pods-medium   16s   requests.cpu: 0/10, requests.memory: 0/20Gi    limits.cpu: 0/20, limits.memory: 0/200Gi</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Delete all of the resource quotas by name:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">$ kubectl delete resourcequota  pods-high -n netapp-acc
+resourcequota "pods-high" deleted
+
+$ kubectl delete resourcequota  pods-low -n netapp-acc
+resourcequota "pods-low" deleted
+
+$ kubectl delete resourcequota  pods-medium -n netapp-acc
+resourcequota "pods-medium" deleted</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get the limit ranges in the netapp-acc namespace:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">$ kubectl get limits -n netapp-acc
+
+NAME              CREATED AT
+cpu-limit-range   2022-06-27T19:01:23Z</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Delete the limit ranges by name:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">$kubectl delete limitrange cpu-limit-range -n netapp-acc</code></pre>
+</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
