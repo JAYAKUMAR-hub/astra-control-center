@@ -53,11 +53,34 @@
   <link rel="stylesheet" href="/us-en/astra-control-center/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
   <link rel='stylesheet' href='/us-en/astra-control-center/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
-    if (document.location.hostname === "docs.netapp.com") {
+    function addAdobeLaunch(adobeId) {
+      var head = document.getElementsByTagName('head')[0];
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/"+adobeId+".min.js";
+      head.appendChild(adobe);
+    }
+
+    function addGoogleAnalytics(gtagId) {
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id="+gtagId;
+      var head = document.getElementsByTagName('head')[0];
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gtagId);
+    }
+
+    function addConsent(consentId) {
       var head = document.getElementsByTagName('head')[0];
       var onetrustConsent = document.createElement("script");
       onetrustConsent.type = "text/javascript";
-      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/"+consentId+"/OtAutoBlock.js";
       head.appendChild(onetrustConsent);
 
       var onetrustScript = document.createElement("script");
@@ -65,30 +88,11 @@
       onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
       onetrustScript.charset = "UTF-8";
       onetrustScript.dataset.documentLanguage = "true";
-      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      onetrustScript.dataset.domainScript = consentId;
       head.appendChild(onetrustScript);
-    }
-
-    function OptanonWrapper() { }
-
-    if (document.location.hostname === "docs.netapp.com") {
-      var adobe = document.createElement("script");
-      adobe.type = "text/plain";
-      adobe.className = "optanon-category-C0002";
-      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
-      head.appendChild(adobe);
-
-      var google = document.createElement("script");
-      google.type = "text/plain";
-      google.className = "optanon-category-C0002";
-      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
-      head.appendChild(google);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-81697994-3');
-    }
+    }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
+    addAdobeLaunch("launch-e9ff3acac59f");
+    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -207,7 +211,7 @@
     </li>
     
   </ul>
-</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[View a summary of app and cluster health](https://docs.netapp.com/us-en/astra-control-center/use/view-dashboard.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/astra-control-center/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/use/view-dashboard.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/astra-control-center/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/astra-control-center/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[View a summary of app and cluster health](https://docs.netapp.com/us-en/astra-control-center/use/view-dashboard.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/astra-control-center/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/use/view-dashboard.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/astra-control-center/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/astra-control-center/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -379,6 +383,7 @@
   <!-- Sidebar Column -->
   
   <div class="col-md-3" id="sidebar-height">
+      <button id="btn-sidebar-collapse" onclick="hideSidebar()"><img src="/us-en/astra-control-center/images/collapse.png" alt="Collapse navigation panel"></button>
       <div class="n-pdf-header">
   <a id="toggleButtonPdf" class="n-pdf-button" type="button">
     <img src="/us-en/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>Available PDFs<span>
@@ -854,149 +859,488 @@
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
 </script><div class="sidebar-nav-container" id="mysidebardiv">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/index.html">
+  <ul id="mysidebar" class="nav"><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control Center docs"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/index.html">
         Astra Control Center docs
-      </a></li><li class="subfolders "><a href="/us-en/astra-control-center/release-notes/rn_overview.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Release notes"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="/us-en/astra-control-center/release-notes/rn_overview.html">
         <div class="na-navbar-padding"> Release notes</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/release-notes/whats-new.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="What's new in this release of Astra Control Center"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/release-notes/whats-new.html">
         What's new in this release of Astra Control Center
-      </a></li><li class="subfolders "><a href="/us-en/astra-control-center/release-notes/known-issues.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Known issues"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="/us-en/astra-control-center/release-notes/known-issues.html">
         <div class="na-navbar-padding"> Known issues</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/release-notes/known-issues-ads.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Known issues with Astra Data Store and this Astra Control Center release"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/release-notes/known-issues-ads.html">
         Known issues with Astra Data Store and this Astra Control Center release
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/release-notes/known-limitations.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Known limitations"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/release-notes/known-limitations.html">
         Known limitations
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Concepts"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Concepts</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/intro.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Learn about Astra Control"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/intro.html">
         Learn about Astra Control
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/architecture.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Architecture and components"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/architecture.html">
         Architecture and components
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/data-protection.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Data protection"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/data-protection.html">
         Data protection
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/licensing.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Licensing"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/licensing.html">
         Licensing
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/learn/app-management.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Understanding app management"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/learn/app-management.html">
         Understanding app management
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/choose-class-and-size.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Storage classes and PV size"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/choose-class-and-size.html">
         Storage classes and PV size
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/user-roles-namespaces.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="User roles and namespaces"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/concepts/user-roles-namespaces.html">
         User roles and namespaces
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get started"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Get started</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/requirements.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control Center requirements"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/requirements.html">
         Astra Control Center requirements
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/quick-start.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Quick start for Astra Control Center"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/quick-start.html">
         Quick start for Astra Control Center
-      </a></li><li class="subfolders "><a href="/us-en/astra-control-center/get-started/install_overview.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installation overview"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="/us-en/astra-control-center/get-started/install_overview.html">
         <div class="na-navbar-padding"> Installation overview</div>
       </a>
-      <ul><li class="subfolders "><a href="/us-en/astra-control-center/get-started/install_acc.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Install Astra Control Center"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="/us-en/astra-control-center/get-started/install_acc.html">
         <div class="na-navbar-padding"> Install Astra Control Center</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/acc_cluster_cr_options.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Understand Astra Control Center cluster CR options"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/acc_cluster_cr_options.html">
         Understand Astra Control Center cluster CR options
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/understand-psp-restrictions.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Understand pod security policy restrictions"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/understand-psp-restrictions.html">
         Understand pod security policy restrictions
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/cert-manager-prereqs.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configure an external cert-manager"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/cert-manager-prereqs.html">
         Configure an external cert-manager
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/acc_operatorhub_install.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Install Astra Control Center using OpenShift OperatorHub"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/acc_operatorhub_install.html">
         Install Astra Control Center using OpenShift OperatorHub
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/install_acc-cvo.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Install Astra Control Center with a Cloud Volumes ONTAP storage backend"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/install_acc-cvo.html">
         Install Astra Control Center with a Cloud Volumes ONTAP storage backend
-      </a></li></ul></li><li class="subfolders "><a href="/us-en/astra-control-center/get-started/setup_overview.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up Astra Control Center"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="/us-en/astra-control-center/get-started/setup_overview.html">
         <div class="na-navbar-padding"> Set up Astra Control Center</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/add-cluster-reqs.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Prerequisites for adding a cluster"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/add-cluster-reqs.html">
         Prerequisites for adding a cluster
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/add-custom-tls-certificate.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Add a custom TLS certificate"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/add-custom-tls-certificate.html">
         Add a custom TLS certificate
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/acc-create-podsecuritypolicy.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create a custom pod security policy"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/acc-create-podsecuritypolicy.html">
         Create a custom pod security policy
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/faq.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="FAQ"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/get-started/faq.html">
         FAQ
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Use Astra"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Use Astra</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-apps.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Start managing apps"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-apps.html">
         Start managing apps
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Protect apps"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Protect apps</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/protection-overview.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Protection overview"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/protection-overview.html">
         Protection overview
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/protect-apps.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Protect apps"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/protect-apps.html">
         Protect apps
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/restore-apps.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Restore apps"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/restore-apps.html">
         Restore apps
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/replication.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Replicate apps to a remote system"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/replication.html">
         Replicate apps to a remote system
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/clone-apps.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Clone and migrate apps"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/clone-apps.html">
         Clone and migrate apps
-      </a></li><li class="subfolders "><a href="/us-en/astra-control-center/use/execution-hooks.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage app execution hooks"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="/us-en/astra-control-center/use/execution-hooks.html">
         <div class="na-navbar-padding"> Manage app execution hooks</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/execution-hook-examples.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Execution hook examples"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/execution-hook-examples.html">
         Execution hook examples
-      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitor app and cluster health"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Monitor app and cluster health</div>
       </a>
-      <ul><li class="  active "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/view-dashboard.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Dashboard summary"
+      data-li-level="3#" 
+      class="  active "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/view-dashboard.html">
         Dashboard summary
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/view-clusters.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cluster health and details"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/view-clusters.html">
         Cluster health and details
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/view-apps.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="App health and details"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/view-apps.html">
         App health and details
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage your account"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Manage your account</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-users.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage users"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-users.html">
         Manage users
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-roles.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage roles"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-roles.html">
         Manage roles
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-notifications.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage notifications"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-notifications.html">
         Manage notifications
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-credentials.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage credentials"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-credentials.html">
         Manage credentials
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/view-account-activity.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitor account activity"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/view-account-activity.html">
         Monitor account activity
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/update-licenses.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Update an existing license"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/update-licenses.html">
         Update an existing license
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-connections.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage repository connections"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-connections.html">
         Manage repository connections
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-packages-acc.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage software packages"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-packages-acc.html">
         Manage software packages
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-buckets.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage buckets"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-buckets.html">
         Manage buckets
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-backend.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage the storage backend"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/manage-backend.html">
         Manage the storage backend
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/monitor-protect.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitor infrastructure with Cloud Insights and Fluentd"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/monitor-protect.html">
         Monitor infrastructure with Cloud Insights and Fluentd
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/unmanage.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Unmanage apps and clusters"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/unmanage.html">
         Unmanage apps and clusters
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/upgrade-acc.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Upgrade Astra Control Center"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/upgrade-acc.html">
         Upgrade Astra Control Center
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/use/uninstall_acc.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Uninstall Astra Control Center"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/use/uninstall_acc.html">
         Uninstall Astra Control Center
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Automate with REST API"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Automate with REST API</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/rest-api/api-intro.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Introduction"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/rest-api/api-intro.html">
         Introduction
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Knowledge and support"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Knowledge and support</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/support/troubleshooting-acc.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Troubleshooting"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/support/troubleshooting-acc.html">
         Troubleshooting
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/support/get-help.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get help"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/support/get-help.html">
         Get help
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/acc-earlier-versions.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Earlier versions"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/acc-earlier-versions.html">
         Earlier versions
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/astra-control-center/legal-notices.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Legal notices"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/astra-control-center/legal-notices.html">
         Legal notices
       </a></li></ul>
 </div>
@@ -1015,8 +1359,9 @@
   
 
   <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
-    <!-- Begin of page container --><article class="page-content">
+    <!-- Begin of page container --><article class="page-content" id="main">
       <div class="ie-utility">
+  <button id="btn-sidebar-expand" onclick="showSidebar()"><img src="/us-en/astra-control-center/images/expand.png" alt="Expand navigation panel"></button>
   <div class="ie-menu">
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
