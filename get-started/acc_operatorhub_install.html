@@ -1394,7 +1394,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-08-01 22:12:18 +0000">08/01/2022</time>
+    <time datetime="2022-09-01 21:14:31 +0000">09/01/2022</time>
     
   
 
@@ -1548,28 +1548,43 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
+<p>Complete the appropriate step sequence for your container engine:</p>
+</li>
+</ol>
+</div>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">Docker</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
 <p>Change to the Astra directory:</p>
 <div class="listingblock">
 <div class="content">
-<pre>cd acc</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">cd acc</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Push the package images in the Astra Control Center image directory to your local registry. Make the following substitutions before running the command:</p>
+<p><a id="substep_image_local_registry_push"></a>Push the package images in the Astra Control Center image directory to your local registry. Make the following substitutions before running the command:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Replace BUNDLE_FILE with the name of the Astra Control bundle file (for example, <code>acc.manifest.bundle.yaml</code>).</p>
+<p>Replace BUNDLE_FILE with the name of the Astra Control bundle file (for example, <code>acc.manifest.yaml</code>).</p>
 </li>
 <li>
 <p>Replace MY_REGISTRY with the URL of the Docker repository.</p>
 </li>
 <li>
-<p>Replace MY_REGISTRY_USER and MY_REGISTRY_PASSWORD with the credentials for the repository.</p>
+<p>Replace MY_REGISTRY_USER with the user name.</p>
+</li>
+<li>
+<p>Replace MY_REGISTRY_TOKEN with an authorized token for the registry.</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl astra packages push-images -m BUNDLE_FILE -r MY_REGISTRY -u MY_REGISTRY_USER -p MY_REGISTRY_PASSWORD</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl astra packages push-images -m BUNDLE_FILE -r MY_REGISTRY -u MY_REGISTRY_USER -p MY_REGISTRY_TOKEN</code></pre>
 </div>
 </div>
 </li>
@@ -1577,6 +1592,57 @@
 </div>
 </li>
 </ol>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">Podman</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to your registry:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">podman login [your_registry_path]</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run the following script, making the &lt;YOUR_REGISTRY&gt; substitution as noted in the comments:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh"># You need to be at the root of the tarball.
+# You should see these files to confirm correct location:
+#   acc.manifest.yaml
+#   acc/
+
+# Replace &lt;YOUR_REGISTRY&gt; with your own registry (e.g registry.customer.com or registry.customer.com/testing, etc..)
+export REGISTRY=&lt;YOUR_REGISTRY&gt;
+export PACKAGENAME=acc
+export PACKAGEVERSION=22.08.0-20
+export DIRECTORYNAME=acc
+for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
+  # Load to local cache
+  astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
+
+  # Remove path and keep imageName.
+  astraImageNoPath=$(echo ${astraImage} | sed 's:.*/::')
+
+  # Tag with local image repo.
+  podman tag ${astraImage} ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+
+  # Push to the local repo.
+  podman push ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+done</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>

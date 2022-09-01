@@ -1394,7 +1394,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-25 17:34:41 +0000">07/25/2022</time>
+    <time datetime="2022-09-01 21:14:31 +0000">09/01/2022</time>
     
   
 
@@ -1449,23 +1449,26 @@
 <p>Download the software package from the NetApp Support Site, and save it on a machine that has the <code>kubectl</code> utility installed.</p>
 </li>
 <li>
-<p>Extract the compressed package file, and change directory to the location of the Astra Control bundle file (for example, <code>acc.manifest.bundle.yaml</code>).</p>
+<p>Extract the compressed package file, and change directory to the location of the Astra Control bundle file (for example, <code>acc.manifest.yaml</code>).</p>
 </li>
 <li>
 <p>Push the package images to the Docker repository. Make the following substitutions:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Replace BUNDLE_FILE with the name of the Astra Control bundle file (for example, <code>acc.manifest.bundle.yaml</code>).</p>
+<p>Replace BUNDLE_FILE with the name of the Astra Control bundle file (for example, <code>acc.manifest.yaml</code>).</p>
 </li>
 <li>
 <p>Replace MY_REGISTRY with the URL of the Docker repository.</p>
 </li>
 <li>
-<p>Replace MY_REGISTRY_USER and MY_REGISTRY_PASSWORD with the credentials for the repository.</p>
+<p>Replace MY_REGISTRY_USER with the user name.</p>
+</li>
+<li>
+<p>Replace MY_REGISTRY_TOKEN with an authorized token for the registry.</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl astra packages push-images -m BUNDLE_FILE -r MY_REGISTRY -u MY_REGISTRY_USER -p MY_REGISTRY_PASSWORD</pre>
+<pre>kubectl astra packages push-images -m BUNDLE_FILE -r MY_REGISTRY -u MY_REGISTRY_USER -p MY_REGISTRY_TOKEN</pre>
 </div>
 </div>
 </li>
