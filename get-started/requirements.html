@@ -1396,7 +1396,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-02 17:42:29 +0000">09/02/2022</time>
+    <time datetime="2022-09-23 14:19:44 +0000">09/23/2022</time>
     
   
 
@@ -1548,7 +1548,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Astra Trident</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Astra Trident 21.10.1 or newer installed and configured<br>
-Astra Trident 22.04 or newer for SnapMirror-based application replication</p>
+Astra Trident 22.07 or newer for SnapMirror-based application replication</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1693,10 +1693,10 @@ The default VMware TKG and TKGi configuration file token expires ten hours after
 <div class="ulist">
 <ul>
 <li>
-<p>Astra Data Store</p>
+<p>NetApp ONTAP 9.5 or newer AFF and FAS systems</p>
 </li>
 <li>
-<p>NetApp ONTAP 9.5 or newer AFF and FAS systems</p>
+<p>NetApp ONTAP 9.8 or newer AFF and FAS systems for SnapMirror-based application replication</p>
 </li>
 <li>
 <p>NetApp Cloud Volumes ONTAP</p>
@@ -1840,7 +1840,7 @@ When managing application clusters in a Rancher environment, modify the applicat
 <div class="ulist">
 <ul>
 <li>
-<p>Astra Control Center must be deployed in a third fault domain or secondary site to achieve seamless disaster recovery.</p>
+<p>To achieve seamless disaster recovery, we recommend that you deploy Astra Control Center in a third fault domain or secondary site.</p>
 </li>
 <li>
 <p>The app&#8217;s host Kubernetes cluster and a destination Kubernetes cluster must be available and connected to two ONTAP clusters, ideally at different failure domains or sites.</p>
@@ -1852,24 +1852,13 @@ When managing application clusters in a Rancher environment, modify the applicat
 <p>The paired remote SVM must be available to Trident on the destination cluster.</p>
 </li>
 <li>
-<p>Trident version 22.04 or greater must exist on both the source and destination ONTAP clusters.</p>
+<p>Trident version 22.07 or greater must exist on both the source and destination ONTAP clusters.</p>
 </li>
 <li>
 <p>ONTAP SnapMirror asynchronous licenses using the Data Protection bundle must be enabled on both the source and destination ONTAP clusters. See <a href="https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html" target="_blank" rel="noopener">SnapMirror licensing overview in ONTAP</a>.</p>
 </li>
 <li>
-<p>The Astra Trident backend configuration file must contain the following line:</p>
-<div class="listingblock">
-<div class="content">
-<pre>"replicationPolicy": "MirrorAllSnapshots"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>See <a href="https://docs.netapp.com/us-en/trident/trident-use/backends.html" target="_blank" rel="noopener">Configure backends</a> for more information.</p>
-</div>
-</li>
-<li>
-<p>When you add an ONTAP storage backend to Astra Control Center, the user whose credentials you use to enable communication between Astra Control Center and the storage backend must have the user login access methods <code>http</code> and <code>ontapi</code> enabled within ONTAP System Manager on both ONTAP clusters. See <a href="https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list" target="_blank" rel="noopener">Manage User Accounts</a> for more information.</p>
+<p>When you add an ONTAP storage backend to Astra Control Center, apply user credentials with the  "admin" role, which has access methods <code>http</code> and <code>ontapi</code> enabled on both ONTAP clusters. See <a href="https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list" target="_blank" rel="noopener">Manage User Accounts</a> for more information.</p>
 </li>
 <li>
 <p>Both source and destination Kubernetes clusters and ONTAP clusters must be managed by Astra Control.</p>
