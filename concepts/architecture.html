@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Here is an overview of the various components of the Astra Control environment.">
-  <meta name="keywords" content=" what is astra, astra control, astra control architecture, astra control center, kubernetes, netapp, clusters, trident"><!-- Icons -->
+  <meta name="keywords" content=" what is astra, astra control, astra control architecture, astra control center, astra control service, kubernetes, netapp, trident"><!-- Icons -->
   <link rel="icon" href="/us-en/astra-control-center/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -1396,7 +1396,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-12-10 20:27:00 +0000">12/10/2021</time>
+    <time datetime="2022-09-23 17:30:58 +0000">09/23/2022</time>
     
   
 
@@ -1420,7 +1420,7 @@
 <p>Here is an overview of the various components of the Astra Control environment.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="../media/concepts/astra-ads-architecture-diagram-v4.png" alt="Astra Control architecture diagram and components"></span></p>
+<p><span class="image"><img src="../media/concepts/astra-architecture-diagram-v4.png" alt="Astra Control architecture diagram and components"></span></p>
 </div>
 </div>
 </div>
@@ -1433,7 +1433,7 @@
 <p><strong>Kubernetes clusters</strong>: Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. Astra provides management services for applications hosted in a Kubernetes cluster.</p>
 </li>
 <li>
-<p><strong>Astra Trident</strong>: As a fully supported open source storage provisioner and orchestrator maintained by NetApp, Trident enables you to create storage volumes for containerized applications managed by Docker and Kubernetes. When deployed with Astra Control Center, Trident includes a configured ONTAP storage backend, and also supports Astra Data Store as a storage backend.</p>
+<p><strong>Astra Trident</strong>: As a fully supported open source storage provisioner and orchestrator maintained by NetApp, Trident enables you to create storage volumes for containerized applications managed by Docker and Kubernetes. When deployed with Astra Control Center, Trident includes a configured ONTAP storage backend.</p>
 </li>
 <li>
 <p><strong>Storage backend</strong>:</p>
@@ -1459,9 +1459,6 @@
 <p>Astra Control Center uses the following storage backends:</p>
 <div class="ulist">
 <ul>
-<li>
-<p>Astra Data Store</p>
-</li>
 <li>
 <p>ONTAP AFF and FAS. As a storage software and hardware platform, ONTAP provides core storage services, support for multiple storage access protocols, and storage management functionality, such as snapshots and mirroring.</p>
 </li>
