@@ -1394,24 +1394,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-07 18:29:51 +0000">09/07/2022</time>
+    <time datetime="2022-09-27 16:15:59 +0000">09/27/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-dbagwell">
-    <img  class="avatar avatar-small"
-          alt="netapp-dbagwell"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/53352450?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-mwallis">
     <img  class="avatar avatar-small"
           alt="netapp-mwallis"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/53353653?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-dbagwell">
+    <img  class="avatar avatar-small"
+          alt="netapp-dbagwell"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/53352450?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1714,7 +1714,7 @@ export PACKAGEVERSION=22.08.1-26
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
   # Load to local cache
-  astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
+  astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image(s): //')
 
   # Remove path and keep imageName.
   astraImageNoPath=$(echo ${astraImage} | sed 's:.*/::')
