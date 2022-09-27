@@ -1394,24 +1394,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-27 16:15:59 +0000">09/27/2022</time>
+    <time datetime="2022-09-27 23:00:14 +0000">09/27/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-mwallis">
-    <img  class="avatar avatar-small"
-          alt="netapp-mwallis"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/53353653?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-dbagwell">
     <img  class="avatar avatar-small"
           alt="netapp-dbagwell"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/53352450?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-mwallis">
+    <img  class="avatar avatar-small"
+          alt="netapp-mwallis"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/53353653?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1449,7 +1449,7 @@
 <p>Ensure all cluster operators are in a healthy state and available.</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl get clusteroperators</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl get clusteroperators</code></pre>
 </div>
 </div>
 </li>
@@ -1457,7 +1457,7 @@
 <p>Ensure all API services are in a healthy state and available:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl get apiservices</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl get apiservices</code></pre>
 </div>
 </div>
 </li>
@@ -1583,7 +1583,7 @@ If you are using Red Hat’s Podman instead of Docker Engine, Podman commands ca
 <p>(Optional) Use the following command to verify the signature of the bundle:</p>
 <div class="listingblock">
 <div class="content">
-<pre>openssl dgst -sha256 -verify AstraControlCenter-public.pub -signature astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">openssl dgst -sha256 -verify AstraControlCenter-public.pub -signature astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz</code></pre>
 </div>
 </div>
 </li>
@@ -1591,7 +1591,7 @@ If you are using Red Hat’s Podman instead of Docker Engine, Podman commands ca
 <p>Extract the images:</p>
 <div class="listingblock">
 <div class="content">
-<pre>tar -vxzf astra-control-center-[version].tar.gz</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">tar -vxzf astra-control-center-[version].tar.gz</code></pre>
 </div>
 </div>
 </li>
@@ -1616,7 +1616,7 @@ If you are using Red Hat’s Podman instead of Docker Engine, Podman commands ca
 <p>List the available NetApp Astra <code>kubectl</code> plugin binaries, and note the name of the file you need for your operating system and CPU architecture:</p>
 <div class="listingblock">
 <div class="content">
-<pre>ls kubectl-astra/</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">ls kubectl-astra/</code></pre>
 </div>
 </div>
 </li>
@@ -1624,7 +1624,7 @@ If you are using Red Hat’s Podman instead of Docker Engine, Podman commands ca
 <p>Copy the file to the same location as the standard <code>kubectl</code> utility. In this example, the <code>kubectl</code> utility is located in the <code>/usr/local/bin</code> directory. Replace <code>&lt;binary-name&gt;</code> with the name of the file you need:</p>
 <div class="listingblock">
 <div class="content">
-<pre>cp kubectl-astra/&lt;binary-name&gt; /usr/local/bin/kubectl-astra</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">cp kubectl-astra/&lt;binary-name&gt; /usr/local/bin/kubectl-astra</code></pre>
 </div>
 </div>
 </li>
@@ -1745,7 +1745,7 @@ done</code></pre>
 <p>Export the KUBECONFIG for the Astra Control Center host cluster:</p>
 <div class="listingblock">
 <div class="content">
-<pre>export KUBECONFIG=[file path]</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">export KUBECONFIG=[file path]</code></pre>
 </div>
 </div>
 </li>
@@ -1757,7 +1757,7 @@ done</code></pre>
 <p>Create the <code>netapp-acc-operator</code> namespace:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl create ns netapp-acc-operator</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl create ns netapp-acc-operator</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1785,7 +1785,7 @@ The placeholder <code>your_registry_path</code> should match the location of the
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl create secret docker-registry astra-registry-cred -n netapp-acc-operator --docker-server=[your_registry_path] --docker-username=[username] --docker-password=[token]</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl create secret docker-registry astra-registry-cred -n netapp-acc-operator --docker-server=[your_registry_path] --docker-username=[username] --docker-password=[token]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1813,7 +1813,7 @@ If you delete the namespace after the secret is generated, you need to regenerat
 <p>Create the <code>netapp-acc</code> (or custom named) namespace.</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl create ns [netapp-acc or custom namespace]</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl create ns [netapp-acc or custom namespace]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1829,7 +1829,7 @@ If you delete the namespace after the secret is generated, you need to regenerat
 <p>Create a secret for the <code>netapp-acc</code> (or custom named) namespace. Add Docker information and run the following command:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl create secret docker-registry astra-registry-cred -n [netapp-acc or custom namespace] --docker-server=[your_registry_path] --docker-username=[username] --docker-password=[token]</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl create secret docker-registry astra-registry-cred -n [netapp-acc or custom namespace] --docker-server=[your_registry_path] --docker-username=[username] --docker-password=[token]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1845,7 +1845,7 @@ If you delete the namespace after the secret is generated, you need to regenerat
 <p><a id="substep_kubeconfig_secret"></a>(Optional) If you want the cluster to be automatically managed by Astra Control Center after installation, make sure that you provide the kubeconfig as a secret within the Astra Control Center namespace you intend to deploy into using this command:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl create secret generic [acc-kubeconfig-cred or custom secret name] --from-file=&lt;path-to-your-kubeconfig&gt; -n [netapp-acc or custom namespace]</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl create secret generic [acc-kubeconfig-cred or custom secret name] --from-file=&lt;path-to-your-kubeconfig&gt; -n [netapp-acc or custom namespace]</code></pre>
 </div>
 </div>
 </li>
@@ -1865,7 +1865,7 @@ If you delete the namespace after the secret is generated, you need to regenerat
 <p>Change the directory:</p>
 <div class="listingblock">
 <div class="content">
-<pre>cd manifests</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">cd manifests</code></pre>
 </div>
 </div>
 </li>
@@ -1873,7 +1873,7 @@ If you delete the namespace after the secret is generated, you need to regenerat
 <p>Edit the Astra Control Center operator deployment YAML (<code>astra_control_center_operator_deploy.yaml</code>) to refer to your local registry and secret.</p>
 <div class="listingblock">
 <div class="content">
-<pre>vim astra_control_center_operator_deploy.yaml</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">vim astra_control_center_operator_deploy.yaml</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -1894,8 +1894,8 @@ An annotated sample YAML follows these steps.
 <p>If you use a registry that requires authentication, replace the default line of <code>imagePullSecrets: []</code> with the following:</p>
 <div class="listingblock">
 <div class="content">
-<pre>imagePullSecrets:
-- name: &lt;astra-registry-cred&gt;</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">imagePullSecrets:
+- name: &lt;astra-registry-cred&gt;</code></pre>
 </div>
 </div>
 </li>
@@ -1959,7 +1959,7 @@ spec:
 <p>Install the Astra Control Center operator:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl apply -f astra_control_center_operator_deploy.yaml</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl apply -f astra_control_center_operator_deploy.yaml</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1986,7 +1986,7 @@ deployment.apps/acc-operator-controller-manager created</pre>
 <p>Verify pods are running:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl get pods -n netapp-acc-operator</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl get pods -n netapp-acc-operator</code></pre>
 </div>
 </div>
 </li>
@@ -2015,7 +2015,7 @@ deployment.apps/acc-operator-controller-manager created</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>vim astra_control_center_min.yaml</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">vim astra_control_center_min.yaml</code></pre>
 </div>
 </div>
 <div class="admonitionblock important">
@@ -2051,9 +2051,9 @@ If you are using a registry that does not require authorization, you must delete
 <p>If you use an external cert-manager, add the following lines to <code>spec</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre>spec:
+<pre class="highlight"><code class="language-sh" data-lang="sh">spec:
   crds:
-    externalCertManager: true</pre>
+    externalCertManager: true</code></pre>
 </div>
 </div>
 </li>
@@ -2139,7 +2139,7 @@ spec:
 <p>If you didn&#8217;t already do so in a previous step, create the <code>netapp-acc</code> (or custom) namespace:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl create ns [netapp-acc or custom namespace]</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl create ns [netapp-acc or custom namespace]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2155,7 +2155,7 @@ spec:
 <p>Install Astra Control Center in the <code>netapp-acc</code> (or your custom) namespace:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl apply -f astra_control_center_min.yaml -n [netapp-acc or custom namespace]</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl apply -f astra_control_center_min.yaml -n [netapp-acc or custom namespace]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2192,7 +2192,7 @@ If you prefer to use OpenShift, you can use comparable oc commands for verificat
 <p>Verify that all system components installed successfully.</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl get pods -n [netapp-acc or custom namespace]</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl get pods -n [netapp-acc or custom namespace]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2279,7 +2279,7 @@ vault-controller-6b954f9b76-gz9nm        1/1    Running  0        11m</pre>
 <p>(Optional) To ensure the installation is completed, you can watch the <code>acc-operator</code> logs using the following command.</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl logs deploy/acc-operator-controller-manager -n netapp-acc-operator -c manager -f</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl logs deploy/acc-operator-controller-manager -n netapp-acc-operator -c manager -f</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -2299,7 +2299,7 @@ vault-controller-6b954f9b76-gz9nm        1/1    Running  0        11m</pre>
 <p>When all the pods are running, verify that the installation was successful (<code>READY</code> is <code>True</code>) and get the one-time password you will use when you log in to Astra Control Center:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl get AstraControlCenter -n netapp-acc</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl get AstraControlCenter -n netapp-acc</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2407,8 +2407,8 @@ This procedure assumes that Istio is deployed using the "default" configuration 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>openssl req -x509 -nodes -days 365 -newkey rsa:2048 
--keyout tls.key -out tls.crt</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">openssl req -x509 -nodes -days 365 -newkey rsa:2048 
+-keyout tls.key -out tls.crt</code></pre>
 </div>
 </div>
 </li>
@@ -2419,9 +2419,9 @@ This procedure assumes that Istio is deployed using the "default" configuration 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl create secret tls [tls secret name] 
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl create secret tls [tls secret name] 
 --key="tls.key"
---cert="tls.crt" -n istio-system</pre>
+--cert="tls.crt" -n istio-system</code></pre>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -2478,7 +2478,7 @@ spec:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl apply -f istio-Ingress.yaml</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl apply -f istio-Ingress.yaml</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2525,8 +2525,15 @@ spec:
 <p>Check the status of the ingress:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl get ingress -n netapp-acc 
-NAME    CLASS HOSTS             ADDRESS         PORTS   AGE 
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl get ingress -n netapp-acc</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Response:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>NAME    CLASS HOSTS             ADDRESS         PORTS   AGE 
 ingress istio astra.example.com 172.16.103.248  80, 443 1h </pre>
 </div>
 </div>
@@ -2614,10 +2621,10 @@ spec:
 <p>Create the OpenShift route:</p>
 <div class="listingblock">
 <div class="content">
-<pre>oc create route edge --service=traefik
+<pre class="highlight"><code class="language-sh" data-lang="sh">oc create route edge --service=traefik
 --port=web -n [netapp-acc or custom namespace]
 --insecure-policy=Redirect --hostname=&lt;ACC address&gt;
---cert=cert.pem --key=key.pem</pre>
+--cert=cert.pem --key=key.pem</code></pre>
 </div>
 </div>
 </li>
@@ -2705,7 +2712,7 @@ If this is your first login and you forget the password and no other administrat
 <p>To inspect the Astra Control Center operator logs, enter the following:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl logs --follow -n netapp-acc-operator $(kubectl get pods -n netapp-acc-operator -o name)  -c manager</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl logs --follow -n netapp-acc-operator $(kubectl get pods -n netapp-acc-operator -o name) -c manager</code></pre>
 </div>
 </div>
 </li>

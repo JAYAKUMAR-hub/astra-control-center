@@ -1396,7 +1396,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-27 16:15:59 +0000">09/27/2022</time>
+    <time datetime="2022-09-27 23:00:14 +0000">09/27/2022</time>
     
   
 
@@ -1440,7 +1440,7 @@
 <p>From your OpenShift cluster, ensure all cluster operators are in a healthy state (<code>available</code> is <code>true</code>):</p>
 <div class="listingblock">
 <div class="content">
-<pre>oc get clusteroperators</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">oc get clusteroperators</code></pre>
 </div>
 </div>
 </li>
@@ -1448,7 +1448,7 @@
 <p>From your OpenShift cluster, ensure all API services are in a healthy state (<code>available</code> is <code>true</code>):</p>
 <div class="listingblock">
 <div class="content">
-<pre>oc get apiservices</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">oc get apiservices</code></pre>
 </div>
 </div>
 </li>
@@ -1503,7 +1503,7 @@
 <p>(Optional) Use the following command to verify the signature of the bundle:</p>
 <div class="listingblock">
 <div class="content">
-<pre>openssl dgst -sha256 -verify AstraControlCenter-public.pub -signature astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">openssl dgst -sha256 -verify AstraControlCenter-public.pub -signature astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz</code></pre>
 </div>
 </div>
 </li>
@@ -1511,7 +1511,7 @@
 <p>Extract the images:</p>
 <div class="listingblock">
 <div class="content">
-<pre>tar -vxzf astra-control-center-[version].tar.gz</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">tar -vxzf astra-control-center-[version].tar.gz</code></pre>
 </div>
 </div>
 </li>
@@ -1536,7 +1536,7 @@
 <p>List the available NetApp Astra <code>kubectl</code> plugin binaries, and note the name of the file you need for your operating system and CPU architecture:</p>
 <div class="listingblock">
 <div class="content">
-<pre>ls kubectl-astra/</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">ls kubectl-astra/</code></pre>
 </div>
 </div>
 </li>
@@ -1544,7 +1544,7 @@
 <p>Copy the file to the same location as the standard <code>kubectl</code> utility. In this example, the <code>kubectl</code> utility is located in the <code>/usr/local/bin</code> directory. Replace <code>&lt;binary-name&gt;</code> with the name of the file you need:</p>
 <div class="listingblock">
 <div class="content">
-<pre>cp kubectl-astra/&lt;binary-name&gt; /usr/local/bin/kubectl-astra</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">cp kubectl-astra/&lt;binary-name&gt; /usr/local/bin/kubectl-astra</code></pre>
 </div>
 </div>
 </li>
