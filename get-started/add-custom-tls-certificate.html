@@ -295,6 +295,8 @@
       </div>
 
       
+      
+      
       <div class="search-property-bar">
         <div id="search-demo-container" class="searchbox n-property-bar__search">
           <div id="react-search" 
@@ -1396,11 +1398,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-25 16:44:47 +0000">01/25/2022</time>
+    <time datetime="2022-09-28 22:14:41 +0000">09/28/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-mwallis">
+    <img  class="avatar avatar-small"
+          alt="netapp-mwallis"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/53353653?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-dbagwell">
     <img  class="avatar avatar-small"
           alt="netapp-dbagwell"
@@ -1450,7 +1460,7 @@
 <p>Find the TLS secret associated with the current certificate using the following command, replacing <code>&lt;ACC-deployment-namespace&gt;</code> with the Astra Control Center deployment namespace:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl get certificate -n &lt;ACC-deployment-namespace&gt;</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl get certificate -n &lt;ACC-deployment-namespace&gt;</code></pre>
 </div>
 </div>
 </li>
@@ -1458,8 +1468,8 @@
 <p>Delete the currently installed secret and certificate using the following commands:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl delete cert cert-manager-certificates -n &lt;ACC-deployment-namespace&gt;
-kubectl delete secret secure-testing-cert -n &lt;ACC-deployment-namespace&gt;</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl delete cert cert-manager-certificates -n &lt;ACC-deployment-namespace&gt;
+kubectl delete secret secure-testing-cert -n &lt;ACC-deployment-namespace&gt;</code></pre>
 </div>
 </div>
 </li>
@@ -1479,7 +1489,7 @@ kubectl delete secret secure-testing-cert -n &lt;ACC-deployment-namespace&gt;</p
 <p>Use the following command to create the new TLS secret with the private key and certificate files from the CA, replacing the arguments in brackets &lt;&gt; with the appropriate information:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl create secret tls &lt;secret-name&gt; --key &lt;private-key-filename&gt; --cert &lt;certificate-filename&gt; -n &lt;ACC-deployment-namespace&gt;</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl create secret tls &lt;secret-name&gt; --key &lt;private-key-filename&gt; --cert &lt;certificate-filename&gt; -n &lt;ACC-deployment-namespace&gt;</code></pre>
 </div>
 </div>
 </li>
@@ -1521,7 +1531,7 @@ Events:                    &lt;none&gt;</pre>
 <p>Create the <code>certificate.yaml</code> file using the following example, replacing the placeholder values in brackets &lt;&gt; with appropriate information:</p>
 <div class="listingblock">
 <div class="content">
-<pre>apiVersion: cert-manager.io/v1
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: &lt;certificate-name&gt;
@@ -1534,7 +1544,7 @@ spec:
   - &lt;astra.dnsname.example.com&gt; #Replace with the correct Astra Control Center DNS address
   issuerRef:
     kind: ClusterIssuer
-    name: cert-manager-certificates</pre>
+    name: cert-manager-certificates</code></pre>
 </div>
 </div>
 </li>
@@ -1542,7 +1552,7 @@ spec:
 <p>Create the certificate using the following command:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl apply -f certificate.yaml</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl apply -f certificate.yaml</code></pre>
 </div>
 </div>
 </li>
@@ -1650,11 +1660,7 @@ Events:                    &lt;none&gt;</pre>
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-              <span class="n-footer__fine-print">Have feedback for our website?</span>
-              <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
-            </li>
-            <li class="n-footer__copyright-link">
-              <a href="https://docs.netapp.com/us-en/announcements/">Announcements</a>
+              <a target="_self" href="javascript:netapp_mailto()">Send feedback about this page</a>
             </li>
           </ul>
         </div>

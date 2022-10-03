@@ -295,6 +295,8 @@
       </div>
 
       
+      
+      
       <div class="search-property-bar">
         <div id="search-demo-container" class="searchbox n-property-bar__search">
           <div id="react-search" 
@@ -1396,7 +1398,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-27 22:11:47 +0000">09/27/2022</time>
+    <time datetime="2022-09-28 22:14:41 +0000">09/28/2022</time>
     
   
 
@@ -1406,6 +1408,14 @@
           alt="netapp-dbagwell"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/53352450?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-mwallis">
+    <img  class="avatar avatar-small"
+          alt="netapp-mwallis"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/53353653?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1623,17 +1633,17 @@ pods-medium   16s   requests.cpu: 0/10, requests.memory: 0/20Gi    limits.cpu: 0
 <p>Delete all of the resource quotas by name:</p>
 <div class="listingblock">
 <div class="content">
-<pre>kubectl delete resourcequota  pods-high -n netapp-acc
-
-resourcequota "pods-high" deleted
-
-kubectl delete resourcequota  pods-low -n netapp-acc
-
-resourcequota "pods-low" deleted
-
-kubectl delete resourcequota  pods-medium -n netapp-acc
-
-resourcequota "pods-medium" deleted</pre>
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl delete resourcequota  pods-high -n netapp-acc</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl delete resourcequota  pods-low -n netapp-acc</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl delete resourcequota  pods-medium -n netapp-acc</code></pre>
 </div>
 </div>
 </li>
@@ -1703,11 +1713,7 @@ cpu-limit-range   2022-06-27T19:01:23Z</pre>
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-              <span class="n-footer__fine-print">Have feedback for our website?</span>
-              <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
-            </li>
-            <li class="n-footer__copyright-link">
-              <a href="https://docs.netapp.com/us-en/announcements/">Announcements</a>
+              <a target="_self" href="javascript:netapp_mailto()">Send feedback about this page</a>
             </li>
           </ul>
         </div>

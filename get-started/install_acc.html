@@ -295,6 +295,8 @@
       </div>
 
       
+      
+      
       <div class="search-property-bar">
         <div id="search-demo-container" class="searchbox n-property-bar__search">
           <div id="react-search" 
@@ -1394,24 +1396,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-27 23:00:14 +0000">09/27/2022</time>
+    <time datetime="2022-10-03 15:27:33 +0000">10/03/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-dbagwell">
-    <img  class="avatar avatar-small"
-          alt="netapp-dbagwell"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/53352450?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-mwallis">
     <img  class="avatar avatar-small"
           alt="netapp-mwallis"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/53353653?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-dbagwell">
+    <img  class="avatar avatar-small"
+          alt="netapp-dbagwell"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/53352450?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -2533,8 +2535,8 @@ spec:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>NAME    CLASS HOSTS             ADDRESS         PORTS   AGE 
-ingress istio astra.example.com 172.16.103.248  80, 443 1h </pre>
+<pre>NAME    CLASS HOSTS             ADDRESS         PORTS   AGE
+ingress istio astra.example.com 172.16.103.248  80, 443 1h</pre>
 </div>
 </div>
 </li>
@@ -2554,7 +2556,7 @@ ingress istio astra.example.com 172.16.103.248  80, 443 1h </pre>
 <p>For a <code>v1beta1</code> deprecated schema, follow this sample:</p>
 <div class="listingblock">
 <div class="content">
-<pre>apiVersion: extensions/v1beta1
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: extensions/v1beta1
 Kind: IngressClass
 metadata:
   name: ingress-acc
@@ -2573,7 +2575,7 @@ spec:
       - backend:
         serviceName: traefik
         servicePort: 80
-        pathType: ImplementationSpecific</pre>
+        pathType: ImplementationSpecific</code></pre>
 </div>
 </div>
 </li>
@@ -2581,7 +2583,7 @@ spec:
 <p>For the <code>v1</code> new schema, follow this sample:</p>
 <div class="listingblock">
 <div class="content">
-<pre>apiVersion: networking.k8s.io/v1
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: netapp-acc-ingress
@@ -2602,7 +2604,7 @@ spec:
               name: traefik
               port:
                 number: 80
-          pathType: ImplementationSpecific</pre>
+          pathType: ImplementationSpecific</code></pre>
 </div>
 </div>
 </li>
@@ -2765,11 +2767,7 @@ If this is your first login and you forget the password and no other administrat
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-              <span class="n-footer__fine-print">Have feedback for our website?</span>
-              <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
-            </li>
-            <li class="n-footer__copyright-link">
-              <a href="https://docs.netapp.com/us-en/announcements/">Announcements</a>
+              <a target="_self" href="javascript:netapp_mailto()">Send feedback about this page</a>
             </li>
           </ul>
         </div>
